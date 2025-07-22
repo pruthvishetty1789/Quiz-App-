@@ -76,6 +76,7 @@ body {
   button:hover {
     background-color: #45a049;
   }
+   /* responsive-footer */
 
   .footer-container{
     display:flex;
@@ -140,7 +141,8 @@ body {
 
 
 /* Responsive: Stack on small screens */
-@media (max-width: 600px) {
+
+@media (max-width: 600px){
   .footer-container p {
     margin-left: 0;
     margin-bottom: 0.7rem;
