@@ -2,9 +2,9 @@ body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
     margin: 0;
-    padding: 20px;
+    padding: 0;
   }
-  
+
   .quiz-container {
     max-width: 800px;
     margin: 0 auto;
@@ -33,6 +33,7 @@ body {
     font-weight: bold;
     margin-bottom: 10px;
   }
+
   
 
   .option-container {
@@ -75,4 +76,85 @@ body {
   button:hover {
     background-color: #45a049;
   }
+
+  .footer-container{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    position:fixed;
+    bottom:0;
+    left: 0;
+    right: 0;
+    z-index:1000;
+    background: linear-gradient(135deg, #4f8cff, #8f94fb, #c3cfe2);
+    width:100%;
+    padding: 1rem 2rem;
+    color: #fff;
+    font-weight: 500;
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.4);
+    font-size: 1rem;
+    border-top: 0.055rem solid white;
+  }
+
+  .footer-container p{
+    margin-left:2rem;
+    font-size:1rem;
+  }
+ 
+  .footer-links{
+    display:flex;
+    align-items:center;
+    margin-right:7rem;
+    gap:1rem;
+   
+  }
+  .link{
+    text-decoration: none;
+    color:black;
+    font-weight: 500;
+    margin-right: 1rem;
+    opacity: 0.75;
+    display: flex;
+    align-items: center;
+  }
+
+  .icon{
+    padding:0.5rem;
+    opacity: 0.75;
+    font-size: 1.1rem;
+    transition:transform 0.3s ease, opacity 0.3s ease;
+  }
+
+  .link:hover{
+    transform: scale(1.10);
+    opacity:1;
+    color:white;
+    transition: all 0.3s ease-in-out;
+  }
   
+.icon:hover {
+  transform: scale(1.10);
+  color: #fff;
+  opacity:1
+}
+
+
+/* Responsive: Stack on small screens */
+@media (max-width: 600px) {
+  .footer-container p {
+    margin-left: 0;
+    margin-bottom: 0.7rem;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.2rem;
+  }
+
+  .footer-links {
+    margin: 0;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
