@@ -104,7 +104,72 @@ const cssQuestions = [
      answer: "padding" 
     }
 ];
-
+//Cpp Questions
+const cppQuestions = [
+  {
+    question: "Which of the following is the correct way to declare a variable in C++?",
+    options: ["int x;", "x int;", "int x = 0;", "int x: 0;"],
+    answer: "int x;"  
+  } ,
+  {
+  question: "Which of these is NOT a valid way to allocate memory dynamically in C++?",
+  options: ["int* p = new int;", "int p = new int;", "int* p = new int[10];", "delete p;"],
+  answer: "int p = new int;"
+  },
+  {
+  question: "What feature of C++ allows a function or an operator to have different meanings based on context?",
+  options: ["Polymorphism", "Encapsulation", "Abstraction", "Inheritance"],
+  answer: "Polymorphism"
+  },
+  {
+  question: "What does the 'mutable' keyword do in C++?",
+  options: ["Allows a member of a const object to be modified",
+    "Makes a variable thread-safe",
+    "Declares a variable as global",
+    "Defines a virtual function"],
+  answer: "Allows a member of a const object to be modified"
+  },
+  {
+  question: "What happens if you don't provide a destructor in a class with dynamically allocated memory?",
+  options: [
+    "Nothing, the compiler handles it automatically",
+    "Memory leak",
+    "Compile-time error",
+    "Runtime exception"
+  ],
+  answer: "Memory leak"
+  },
+  {
+  question: "Which C++11 feature allows you to initialize variables directly inside the class definition?",
+  options: ["In-class member initializers", "Delegating constructors", "Auto keyword", "Lambda expressions"],
+  answer: "In-class member initializers"
+  },
+  {
+  question: "What is the main difference between 'struct' and 'class' in C++?",
+  options: [
+    "struct members are public by default; class members are private",
+    "structs can't have functions; classes can",
+    "No difference",
+    "Classes can't inherit; structs can"
+  ],
+  answer: "struct members are public by default; class members are private"
+  },
+  {
+    question: "What is the correct syntax for a single-line comment in C++?",   
+    options: ["// This is a comment", "/* This is a comment */", "# This is a comment", "<!-- This is a comment -->"],
+    answer: "// This is a comment"
+  },
+  {
+    question: "Which of the following is used to include a standard library in C++?",
+    options: ["#include <iostream>", "#include iostream", "import iostream", "#include <iostream.h>"],
+    answer: "#include <iostream>" 
+  },
+  {
+    question: "What is the output of the following code: `std::cout << 5 + 3;`?",
+    options: ["8", "53", "Error", "5 + 3"],     
+    answer: "8"
+  }
+];
 // JavaScript Questions
 const jsQuestions = [
   { question: "Which of the following is the correct way to define a function in JavaScript?", 
@@ -343,7 +408,11 @@ document.addEventListener("DOMContentLoaded", () => {
   } else if (document.getElementById("css-questions")) {
     questions = cssQuestions;
     sectionId = "css-questions";
-  } else if (document.getElementById("js-questions")) {
+  }else if (document.getElementById("cpp-questions")) {
+    questions = cppQuestions;
+    sectionId = "cpp-questions";
+  } 
+  else if (document.getElementById("js-questions")) {
     questions = jsQuestions;
     sectionId = "js-questions";
   } else if (document.getElementById("react-questions")) {
