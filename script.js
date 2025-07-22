@@ -242,6 +242,62 @@ const djangoQuestions = [
   { question: "In a Django template, how do you correctly output the value of a variable `my_variable`?", options: ["{{ my_variable }}", "{% my_variable %}", "[[ my_variable ]]", "(( my_variable ))"], answer: "{{ my_variable }}" }
 ];
 
+// dsa questions starts here
+const dsaQuestions = [
+  {
+    question: " What is the time complexity of binary search?",
+    options: ["O(n)", "O(log n)", "O(n log n)", "O(1)"],
+    answer: "O(log n)"
+  },
+  {
+    question: " Which data structure uses FIFO?",
+    options: ["Stack", "Queue", "Tree", "Graph"],
+    answer: "Queue"
+  },
+  {
+    question: " What does 'push' do in a stack?",
+    options: ["Removes an element", "Sorts elements", "Adds an element", "Finds middle"],
+    answer: "Adds an element"
+  },
+  {
+    question: " Which is not a linear data structure?",
+    options: ["Array", "Linked List", "Stack", "Tree"],
+    answer: "Tree"
+  },
+  {
+    question: " What is the default base of recursion?",
+    options: ["While loop", "Loop counter", "Base case", "Tail call"],
+    answer: "Base case"
+  },
+  {
+    question: " What is the time complexity of linear search?",
+    options: ["O(log n)", "O(n)", "O(1)", "O(n^2)"],
+    answer: "O(n)"
+  },
+  {
+    question: " Which data structure uses LIFO?",
+    options: ["Queue", "Graph", "Stack", "Linked List"],
+    answer: "Stack"
+  },
+  {
+    question: " What is the full form of DSA?",
+    options: ["Data Save Algorithm", "Data Structure Algorithm", "Data Structure and Algorithms", "Data Sync Application"],
+    answer: "Data Structure and Algorithms"
+  },
+  {
+    question: " Which traversal method uses recursion most naturally in trees?",
+    options: ["Level Order", "Preorder", "Breadth First", "Level First"],
+    answer:"Preorder"
+  },
+  {question: " Which of the following is not used in graph representation?",
+    options: ["Adjacency Matrix", "Adjacency List", "Hash Table", "Edge List"],
+    answer: "Hash Table"
+  }
+];
+
+// dsa questions end here
+
+
 
 // Function to render a single question
 const renderQuestion = (question, index, sectionId) => {
@@ -364,6 +420,9 @@ document.addEventListener("DOMContentLoaded", () => {
   } else if (document.getElementById("django-questions")) {
     questions = djangoQuestions;
     sectionId = "django-questions";
+  }else if(document.getElementById("dsa-questions")){
+    questions = dsaQuestions;
+     sectionId = "dsa-questions";
   }
 
   // Render questions and attach event listeners only if a valid section is found
@@ -384,3 +443,4 @@ document.addEventListener("DOMContentLoaded", () => {
       .addEventListener("click", () => calculateTotalScore(questions));
   }
 });
+
