@@ -6,103 +6,98 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>HTML Quiz</title>
   <link rel="stylesheet" href="styles.css">
+  <style>
+    .quiz-container a {
+      display: block;
+      text-align: right;
+      margin-right: 0;
+      float: right;
+    }
+
+    .back-button-icon {
+      width: 32px;
+      height: 32px;
+      margin: 10px 10px 0 0;
+    }
+
+    .question-container {
+      margin-bottom: 20px;
+    }
+
+    .result {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    .quiz-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 5px 10px;
+      background-color: #f5f5f5;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+    }
+
+    .btnclass {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      text-align: center;
+    }
+
+    .timer-container,
+    .score-display {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 18px;
+      font-weight: 500;
+    }
+
+    .timer-container {
+      color: #d32f2f;
+      background-color: #ffebee;
+      padding: 8px 12px;
+      border-radius: 20px;
+    }
+
+    .score-display {
+      color: #2e7d32;
+      background-color: #e8f5e9;
+      padding: 8px 12px;
+      border-radius: 20px;
+    }
+
+    #timer,
+    #score {
+      font-weight: bold;
+      min-width: 25px;
+      text-align: center;
+    }
+
+    .timer-warning {
+      animation: pulse 1s infinite alternate;
+    }
+
+    @keyframes pulse {
+      from {
+        transform: scale(1);
+      }
+
+      to {
+        transform: scale(1.1);
+        color: #b71c1c;
+      }
+    }
+  </style>
 </head>
-<style>
-  .quiz-container a {
-    display: block;
-    /* Ensures proper layout behavior */
-    text-align: right;
-    /* Aligns text content, such as the link, to the right */
-    margin-right: 0;
-    /* Optional if extra spacing is needed on the right */
-    float: right;
-    /* Ensures button stays visually aligned correctly */
-  }
-
-  .question-container {
-    margin-bottom: 20px;
-  }
-
-  .result {
-    margin-top: 10px;
-    font-weight: bold;
-  }
-
-  .quiz-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    background-color: white;
-    z-index: 1000;
-    padding: 10px 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  }
-  .btnclass{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    text-align: center;
-  }
-  .quiz-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 5px 10px;
-  background-color: #f5f5f5;
-  border-radius: 8px;
-  margin-bottom: 20px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.timer-container, .score-display {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 18px;
-  font-weight: 500;
-}
-
-.timer-container {
-  color: #d32f2f; /* Red color for timer to stand out */
-  background-color: #ffebee;
-  padding: 8px 12px;
-  border-radius: 20px;
-}
-
-.score-display {
-  color: #2e7d32; /* Green color for score */
-  background-color: #e8f5e9;
-  padding: 8px 12px;
-  border-radius: 20px;
-}
-
-#timer {
-  font-weight: bold;
-  min-width: 25px;
-  text-align: center;
-}
-
-#score {
-  font-weight: bold;
-  min-width: 25px;
-  text-align: center;
-}
-
-.timer-warning {
-  animation: pulse 1s infinite alternate;
-}
-
-@keyframes pulse {
-  from {
-    transform: scale(1);
-  }
-  to {
-    transform: scale(1.1);
-    color: #b71c1c;
-  }
-}
-</style>
 
 <body>
   <div class="quiz-header">
@@ -115,8 +110,16 @@
       <span id="scoree">0</span>
     </div>
   </div>
-  
+
   <div class="quiz-container">
+    <a href="index.html" class="back-button-icon" aria-label="Back to Home">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round">
+        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+      </svg>
+    </a>
+
     <div class="quiz-section">
       <h2>HTML Quiz</h2>
       <div class="btnclass">
@@ -127,8 +130,8 @@
     </div>
 
     <div id="result"></div>
-    <a href="index.html">Back to Home</a>
   </div>
+
   <script src="script.js"></script>
 </body>
 
