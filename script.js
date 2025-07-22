@@ -411,8 +411,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }else if (document.getElementById("cpp-questions")) {
     questions = cppQuestions;
     sectionId = "cpp-questions";
-  } 
-  else if (document.getElementById("js-questions")) {
+  }  else if (document.getElementById("js-questions")) {
     questions = jsQuestions;
     sectionId = "js-questions";
   } else if (document.getElementById("react-questions")) {
