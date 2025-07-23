@@ -72,6 +72,95 @@ const htmlQuestions = [
   },
 ]
 
+// DBMS questions
+const dbmsQuestions = [
+  {
+    question: "Which of the following is a type of DBMS?",
+    options: ["Hierarchical", "Relational", "Network", "All of the above"],
+    answer: "All of the above",
+  },
+  {
+    question: "What does SQL stand for?",
+    options: [
+      "Structured Query Language",
+      "Simple Query Language",
+      "Sequential Query Language",
+      "Standard Query Language",
+    ],
+    answer: "Structured Query Language",
+  },
+  {
+    question: "Which command is used to remove all rows from a table without logging the individual row deletions?",
+    options: ["DELETE", "DROP", "TRUNCATE", "REMOVE"],
+    answer: "TRUNCATE",
+  },
+  {
+    question: "In ER diagrams, what does a diamond shape represent?",
+    options: ["Entity", "Attribute", "Relationship", "Primary Key"],
+    answer: "Relationship",
+  },
+  {
+    question: "Which of the following is not a property of a transaction?",
+    options: ["Atomicity", "Consistency", "Compilation", "Isolation"],
+    answer: "Compilation",
+  },
+  {
+    question: "Which SQL clause is used to filter records?",
+    options: ["SELECT", "WHERE", "FROM", "ORDER BY"],
+    answer: "WHERE",
+  },
+  {
+    question: "What is the main purpose of normalization in DBMS?",
+    options: ["To increase redundancy", "To create backup", "To eliminate data redundancy", "To improve speed"],
+    answer: "To eliminate data redundancy",
+  },
+  {
+    question: "Which normal form removes transitive dependency?",
+    options: ["1NF", "2NF", "3NF", "BCNF"],
+    answer: "3NF",
+  },
+  {
+    question: "Which key uniquely identifies a record in a table?",
+    options: ["Foreign key", "Secondary key", "Primary key", "Candidate key"],
+    answer: "Primary key",
+  },
+  {
+    question: "Which language is used to define the structure of a database schema?",
+    options: ["DCL", "DML", "DDL", "TCL"],
+    answer: "DDL",
+  },
+  {
+    question: "Which of the following is not a DML command?",
+    options: ["SELECT", "INSERT", "UPDATE", "DROP"],
+    answer: "DROP",
+  },
+  {
+    question: "Which index allows faster search of records?",
+    options: ["Hash index", "B-tree index", "Both", "None"],
+    answer: "Both",
+  },
+  {
+    question: "Which command is used to delete a table from a database?",
+    options: ["DELETE TABLE", "DROP TABLE", "REMOVE TABLE", "ERASE TABLE"],
+    answer: "DROP TABLE",
+  },
+  {
+    question: "Which of these is a correct foreign key definition?",
+    options: [
+      "foreign key (emp_id) references employees(emp_id);",
+      "foreignkey(emp_id) refers employees(emp_id);",
+      "foreign emp_id key employees(emp_id);",
+      "foreign_key emp_id on employees;",
+    ],
+    answer: "foreign key (emp_id) references employees(emp_id);",
+  },
+  {
+    question: "Which join returns all records from both tables when there is a match?",
+    options: ["INNER JOIN", "LEFT JOIN", "RIGHT JOIN", "FULL OUTER JOIN"],
+    answer: "FULL OUTER JOIN",
+  },
+]
+
 // CSS Questions
 const cssQuestions = [
   {
@@ -142,6 +231,75 @@ const cssQuestions = [
   },
 ]
 
+// C++ Questions
+const cppQuestions = [
+  {
+    question: "Which of the following is the correct way to declare a variable in C++?",
+    options: ["int x;", "x int;", "int x = 0;", "int x: 0;"],
+    answer: "int x;",
+  },
+  {
+    question: "Which of these is NOT a valid way to allocate memory dynamically in C++?",
+    options: ["int* p = new int;", "int p = new int;", "int* p = new int[10];", "delete p;"],
+    answer: "int p = new int;",
+  },
+  {
+    question: "What feature of C++ allows a function or an operator to have different meanings based on context?",
+    options: ["Polymorphism", "Encapsulation", "Abstraction", "Inheritance"],
+    answer: "Polymorphism",
+  },
+  {
+    question: "What does the 'mutable' keyword do in C++?",
+    options: [
+      "Allows a member of a const object to be modified",
+      "Makes a variable thread-safe",
+      "Declares a variable as global",
+      "Defines a virtual function",
+    ],
+    answer: "Allows a member of a const object to be modified",
+  },
+  {
+    question: "What happens if you don't provide a destructor in a class with dynamically allocated memory?",
+    options: [
+      "Nothing, the compiler handles it automatically",
+      "Memory leak",
+      "Compile-time error",
+      "Runtime exception",
+    ],
+    answer: "Memory leak",
+  },
+  {
+    question: "Which C++11 feature allows you to initialize variables directly inside the class definition?",
+    options: ["In-class member initializers", "Delegating constructors", "Auto keyword", "Lambda expressions"],
+    answer: "In-class member initializers",
+  },
+  {
+    question: "What is the main difference between 'struct' and 'class' in C++?",
+    options: [
+      "struct members are public by default; class members are private",
+      "structs can't have functions; classes can",
+      "No difference",
+      "Classes can't inherit; structs can",
+    ],
+    answer: "struct members are public by default; class members are private",
+  },
+  {
+    question: "What is the correct syntax for a single-line comment in C++?",
+    options: ["// This is a comment", "/* This is a comment */", "# This is a comment", "<!-- This is a comment -->"],
+    answer: "// This is a comment",
+  },
+  {
+    question: "Which of the following is used to include a standard library in C++?",
+    options: ["#include <iostream>", "#include iostream", "import iostream", "#include <iostream.h>"],
+    answer: "#include <iostream>",
+  },
+  {
+    question: "What is the output of the following code: `std::cout << 5 + 3;`?",
+    options: ["8", "53", "Error", "5 + 3"],
+    answer: "8",
+  },
+]
+
 // JavaScript Questions
 const jsQuestions = [
   {
@@ -200,8 +358,6 @@ const jsQuestions = [
     answer: "The object it belongs to",
   },
 ]
-
-// --- NEW QUESTION SETS ADDED BELOW ---
 
 // React Questions
 const reactQuestions = [
@@ -637,11 +793,70 @@ const djangoQuestions = [
   },
 ]
 
-//  Added auto-scroll and progress tracking variables
+// DSA questions
+const dsaQuestions = [
+  {
+    question: " What is the time complexity of binary search?",
+    options: ["O(n)", "O(log n)", "O(n log n)", "O(1)"],
+    answer: "O(log n)",
+  },
+  {
+    question: " Which data structure uses FIFO?",
+    options: ["Stack", "Queue", "Tree", "Graph"],
+    answer: "Queue",
+  },
+  {
+    question: " What does 'push' do in a stack?",
+    options: ["Removes an element", "Sorts elements", "Adds an element", "Finds middle"],
+    answer: "Adds an element",
+  },
+  {
+    question: " Which is not a linear data structure?",
+    options: ["Array", "Linked List", "Stack", "Tree"],
+    answer: "Tree",
+  },
+  {
+    question: " What is the default base of recursion?",
+    options: ["While loop", "Loop counter", "Base case", "Tail call"],
+    answer: "Base case",
+  },
+  {
+    question: " What is the time complexity of linear search?",
+    options: ["O(log n)", "O(n)", "O(1)", "O(n^2)"],
+    answer: "O(n)",
+  },
+  {
+    question: " Which data structure uses LIFO?",
+    options: ["Queue", "Graph", "Stack", "Linked List"],
+    answer: "Stack",
+  },
+  {
+    question: " What is the full form of DSA?",
+    options: [
+      "Data Save Algorithm",
+      "Data Structure Algorithm",
+      "Data Structure and Algorithms",
+      "Data Sync Application",
+    ],
+    answer: "Data Structure and Algorithms",
+  },
+  {
+    question: " Which traversal method uses recursion most naturally in trees?",
+    options: ["Level Order", "Preorder", "Breadth First", "Level First"],
+    answer: "Preorder",
+  },
+  {
+    question: " Which of the following is not used in graph representation?",
+    options: ["Adjacency Matrix", "Adjacency List", "Hash Table", "Edge List"],
+    answer: "Hash Table",
+  },
+]
+
+// Added auto-scroll and progress tracking variables
 const answeredQuestions = new Set()
 let totalQuestions = 0
 
-//  Function to update progress bar
+// Function to update progress bar
 function updateProgressBar() {
   const progressText = document.getElementById("progress-text")
   const progressPercentage = document.getElementById("progress-percentage")
@@ -650,18 +865,16 @@ function updateProgressBar() {
   if (progressText && progressPercentage && progressFill) {
     const answered = answeredQuestions.size
     const percentage = Math.round((answered / totalQuestions) * 100)
-
     progressText.textContent = `Progress: ${answered} / ${totalQuestions}`
     progressPercentage.textContent = `${percentage}%`
     progressFill.style.width = `${percentage}%`
   }
 }
 
-//  Auto-scroll function
+// Auto-scroll function
 function autoScrollToNext(currentIndex) {
   const nextIndex = currentIndex + 1
   const nextQuestion = document.querySelector(`[data-question-index="${nextIndex}"]`)
-
   if (nextQuestion) {
     console.log(`Auto-scrolling to question ${nextIndex + 1}`)
     setTimeout(() => {
@@ -669,8 +882,88 @@ function autoScrollToNext(currentIndex) {
         behavior: "smooth",
         block: "center",
       })
-    }, 800) //  0.8 second delay for better UX
+    }, 800) // 0.8 second delay for better UX
   }
+}
+
+// Timer and scoring functionality
+let actualtime = 60
+let timeleft = 60
+let timeinterval
+let globalscore = 0
+const timerElement = document.getElementById("timer")
+const scoreElement = document.getElementById("scoree")
+
+function updateTimerDisplay() {
+  timerElement.textContent = timeleft.toString()
+}
+
+function updateGlobalScore() {
+  if (scoreElement) {
+    globalscore += actualtime - timeleft
+    scoreElement.innerHTML = globalscore.toString()
+  }
+}
+
+function initializeTimer() {
+  timeleft = 60
+  timerElement.textContent = timeleft.toString()
+  document.querySelectorAll('input[type="radio"]').forEach((input) => {
+    input.disabled = false
+  })
+  document.querySelectorAll(".check-answer-btn").forEach((btn) => {
+    btn.disabled = false
+  })
+  stop()
+}
+
+function stop() {
+  clearInterval(timeinterval)
+}
+
+function start() {
+  if (timeinterval) {
+    clearInterval(timeinterval)
+  }
+  actualtime = 60
+  timeleft = actualtime
+  timerElement.textContent = timeleft.toString()
+  timeinterval = setInterval(() => {
+    timeleft--
+    timerElement.innerText = timeleft.toString()
+    if (timeleft <= 0) {
+      clearInterval(timeinterval)
+      handleTimeUp(currentQuestions)
+    }
+  }, 1000)
+}
+
+function handleTimeUp(questions) {
+  document.querySelectorAll('input[type="radio"]').forEach((input) => {
+    input.disabled = true
+  })
+  document.querySelectorAll(".check-answer-btn").forEach((btn) => {
+    btn.disabled = true
+  })
+  const response = document.getElementById("result")
+  response.textContent = "Time's up"
+  calculateTotalScore(questions)
+}
+
+const startBtn = document.getElementById("start-btn")
+const restartBtn = document.getElementById("restart-btn")
+
+if (startBtn) {
+  startBtn.addEventListener("click", () => {
+    initializeTimer()
+    start()
+  })
+}
+
+if (restartBtn) {
+  restartBtn.addEventListener("click", () => {
+    initializeTimer()
+  })
 }
 
 // Function to render a single question
@@ -680,27 +973,44 @@ const renderQuestion = (question, index, sectionId) => {
 
   const questionElem = document.createElement("div")
   questionElem.classList.add("question-container")
-  //  Added data attribute for auto-scroll targeting
+  // Added data attribute for auto-scroll targeting
   questionElem.setAttribute("data-question-index", index)
 
-  questionElem.innerHTML = `
-    <p>${index + 1}. ${question.question}</p>
-    <ul class="option-container">
-      ${question.options
-        .map(
-          (option) => `
-        <li>
-          <label>
-            <input type="radio" name="question-${index}" value="${option}"> ${option}
-          </label>
-        </li>
-      `,
-        )
-        .join("")}
-    </ul>
-    <button class="check-answer-btn" data-index="${index}">Check Answer</button>
-    <div class="result" id="result-${index}"></div>
-  `
+  // Add question text
+  const questionText = document.createElement("p")
+  questionText.textContent = `${index + 1}. ${question.question}`
+  questionElem.appendChild(questionText)
+
+  // Create options
+  const ul = document.createElement("ul")
+  ul.className = "option-container"
+  question.options.forEach((option) => {
+    const li = document.createElement("li")
+    const label = document.createElement("label")
+    const input = document.createElement("input")
+    input.type = "radio"
+    input.name = `question-${index}`
+    input.value = option
+    const textNode = document.createTextNode(" " + option)
+    label.appendChild(input)
+    label.appendChild(textNode)
+    li.appendChild(label)
+    ul.appendChild(li)
+  })
+  questionElem.appendChild(ul)
+
+  // Add Check Answer button
+  const checkBtn = document.createElement("button")
+  checkBtn.className = "check-answer-btn"
+  checkBtn.dataset.index = index
+  checkBtn.textContent = "Check Answer"
+  questionElem.appendChild(checkBtn)
+
+  // Add result div
+  const resultDiv = document.createElement("div")
+  resultDiv.className = "result"
+  resultDiv.id = `result-${index}`
+  questionElem.appendChild(resultDiv)
 
   sectionContainer.appendChild(questionElem)
 }
@@ -710,9 +1020,8 @@ const renderQuestions = (questions, sectionId) => {
   // Ensure we don't try to render if the section doesn't exist.
   if (!document.getElementById(sectionId)) return
 
-  //  Set total questions for progress tracking
+  // Set total questions for progress tracking
   totalQuestions = questions.length
-
   questions.forEach((q, index) => renderQuestion(q, index, sectionId))
 
   // Add a final score container at the end
@@ -725,10 +1034,9 @@ const renderQuestions = (questions, sectionId) => {
     <button id="feedback-btn" style="width: 180px; padding: 10px; font-size: 16px;">Feedback / Report</button>
   </div>
   <div id="total-score" style="margin-top: 15px; font-weight: bold;"></div>`
-
   sectionContainer.appendChild(scoreElem)
 
-  //  Initialize progress bar
+  // Initialize progress bar
   updateProgressBar()
 }
 
@@ -745,7 +1053,7 @@ const checkAnswer = (questions, index) => {
     return false
   }
 
-  //  Mark question as answered and update UI
+  // Mark question as answered and update UI
   answeredQuestions.add(index)
   questionContainer.classList.add("answered")
   button.classList.add("answered")
@@ -755,20 +1063,16 @@ const checkAnswer = (questions, index) => {
   if (selectedOption.value === questions[index].answer) {
     resultContainer.textContent = "✅ Correct!"
     resultContainer.style.color = "green"
-
-    //  Update progress and auto-scroll
+    // Update progress and auto-scroll
     updateProgressBar()
     autoScrollToNext(index)
-
     return true
   } else {
     resultContainer.textContent = `❌ Wrong! The correct answer is: ${questions[index].answer}`
     resultContainer.style.color = "red"
-
-    //  Update progress and auto-scroll even for wrong answers
+    // Update progress and auto-scroll even for wrong answers
     updateProgressBar()
     autoScrollToNext(index)
-
     return false
   }
 }
@@ -781,7 +1085,10 @@ const calculateTotalScore = (questions) => {
     if (selectedOption && selectedOption.value === q.answer) {
       score++
     }
+    globalscore = score
   })
+
+  updateGlobalScore()
 
   // Display the total score
   const totalScoreContainer = document.getElementById("total-score")
@@ -790,17 +1097,22 @@ const calculateTotalScore = (questions) => {
 }
 
 // Dynamically render questions based on the page
+let currentQuestions = []
+
 document.addEventListener("DOMContentLoaded", () => {
   let questions = []
   let sectionId = ""
 
-  // Determine the quiz type based on the section ID
+  // Determine the quiz type
   if (document.getElementById("html-questions")) {
     questions = htmlQuestions
     sectionId = "html-questions"
   } else if (document.getElementById("css-questions")) {
     questions = cssQuestions
     sectionId = "css-questions"
+  } else if (document.getElementById("cpp-questions")) {
+    questions = cppQuestions
+    sectionId = "cpp-questions"
   } else if (document.getElementById("js-questions")) {
     questions = jsQuestions
     sectionId = "js-questions"
@@ -822,13 +1134,18 @@ document.addEventListener("DOMContentLoaded", () => {
   } else if (document.getElementById("django-questions")) {
     questions = djangoQuestions
     sectionId = "django-questions"
+  } else if (document.getElementById("dsa-questions")) {
+    questions = dsaQuestions
+    sectionId = "dsa-questions"
+  } else if (document.getElementById("dbms-questions")) {
+    questions = dbmsQuestions
+    sectionId = "dbms-questions"
   }
 
-  // Render questions and attach event listeners only if a valid section is found
   if (sectionId) {
+    currentQuestions = questions
     renderQuestions(questions, sectionId)
 
-    // Attach event listeners to "Check Answer" buttons
     document.querySelectorAll(".check-answer-btn").forEach((button) => {
       button.addEventListener("click", (event) => {
         const index = Number.parseInt(event.target.getAttribute("data-index"))
@@ -836,37 +1153,40 @@ document.addEventListener("DOMContentLoaded", () => {
       })
     })
 
-    // ✅ Attach both event listeners right after injecting HTML
-    document.getElementById("calculate-score-btn").addEventListener("click", () => calculateTotalScore(questions))
+    document.getElementById("calculate-score-btn")?.addEventListener("click", () => {
+      initializeTimer()
+      calculateTotalScore(questions)
+    })
 
-    document.getElementById("feedback-btn").addEventListener("click", () => {
+    document.getElementById("feedback-btn")?.addEventListener("click", () => {
       window.location.href = "contact-us.html"
     })
   }
-})
 
-// Function to toggle Feedback and Issue sections based on selected reason
-document.addEventListener("DOMContentLoaded", () => {
+  // Restart quiz handler
+  const restartBtn = document.getElementById("restartQuizBtn")
+  if (restartBtn) {
+    restartBtn.addEventListener("click", () => {
+      if (confirm("Are you sure you want to restart the quiz? All progress will be lost.")) {
+        window.location.reload()
+      }
+    })
+  }
+
+  // Contact form logic
   const reasonSelect = document.getElementById("reason")
   const feedbackSection = document.getElementById("feedback-Section")
   const issueSection = document.getElementById("issue-Section")
   const contactForm = document.getElementById("contact-Form")
-  const contactResponseMessage = document.getElementById("responseMessage") // For messages on the contact form page
+  const contactResponseMessage = document.getElementById("responseMessage")
 
-  // --- Function to show/hide sections and manage 'required' attributes ---
   function toggleFormSections() {
-    if (!reasonSelect) return // Exit if not on the contact form page
-
+    if (!reasonSelect) return
     const selectedReason = reasonSelect.value
-
-    // Hide both sections initially
     feedbackSection.style.display = "none"
     issueSection.style.display = "none"
-
-    // Set 'required' for elements within each section based on selection
-    setRequired(feedbackSection, false) // Unset all required first
-    setRequired(issueSection, false) // Unset all required first
-
+    setRequired(feedbackSection, false)
+    setRequired(issueSection, false)
     if (selectedReason === "feedback") {
       feedbackSection.style.display = "block"
       setRequired(feedbackSection, true)
@@ -876,75 +1196,53 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // Helper function to set/unset 'required' attribute for inputs within a section
   function setRequired(sectionElement, isRequired) {
-    // Select all relevant form elements within the given section
     const inputs = sectionElement.querySelectorAll('input:not([type="file"]), textarea, select')
     inputs.forEach((input) => {
-      // Set or remove the 'required' attribute
       input.required = isRequired
     })
   }
 
-  // --- Logic for the Contact Form Page (contact-us.html) ---
   if (contactForm) {
-    // Check if the contact form elements exist on the current page
-    // Initial call to set the correct section visibility on page load
     toggleFormSections()
-
-    // Event listener for changes in the 'Reason for Contact' select box
     reasonSelect.addEventListener("change", toggleFormSections)
-
-    // Handle form submission
     contactForm.addEventListener("submit", (e) => {
-      e.preventDefault() // Prevent default form submission
-
-      // Use the browser's built-in validation
+      e.preventDefault()
       if (!contactForm.checkValidity()) {
         contactResponseMessage.textContent = "Please fill out all required fields."
         contactResponseMessage.style.color = "red"
         return
       }
-
-      // At this point, the form is valid based on HTML5 'required' attributes
       const selectedReason = reasonSelect.value
       let successMessage = ""
-
       if (selectedReason === "feedback") {
         successMessage = "Thank you for your feedback! We appreciate it."
       } else if (selectedReason === "issue") {
         successMessage = "Your issue has been reported. Thank you!"
       } else {
-        successMessage = "Form submitted successfully!" // Fallback for no specific reason selected (though 'required' should prevent this)
+        successMessage = "Form submitted successfully!"
       }
-
-      // Simulate form data collection (for real scenario, you'd send this to a server)
       const formData = new FormData(contactForm)
       const data = {}
       for (const [key, value] of formData.entries()) {
         data[key] = value
       }
       console.log("Form Data Submitted:", data)
-
-      // Store the success message in session storage
       sessionStorage.setItem("formSubmissionSuccess", successMessage)
-
-      // Redirect to index.html
       window.location.href = "index.html"
     })
   }
 
-  // --- Logic for the Index Page (index.html) ---
+  // Display submission message on index
   const submissionMessageDiv = document.getElementById("submission-message")
   if (submissionMessageDiv) {
-    // Check if the submission message div exists on the current page
     const message = sessionStorage.getItem("formSubmissionSuccess")
     if (message) {
       submissionMessageDiv.textContent = message
       submissionMessageDiv.style.color = "green"
       submissionMessageDiv.style.fontWeight = "bold"
-      submissionMessageDiv.style.margin = "15px 0" // Apply styling
-      sessionStorage.removeItem("formSubmissionSuccess") // Clear the message after displaying
+      submissionMessageDiv.style.margin = "15px 0"
+      sessionStorage.removeItem("formSubmissionSuccess")
     }
   }
 })

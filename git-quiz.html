@@ -5,24 +5,34 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Git & GitHub Quiz</title>
   <link rel="stylesheet" href="styles.css">
-</head> 
-
-<style>
-  /* Style added to position the link */
-  .quiz-container a {
-    float: right;   
-  }    
-  /* Style added for the icon's size and spacing */
-  .back-button-icon {
-    width: 32px;
-    height: 32px;
-    margin: 10px 10px 0 0;
-  }
-</style>
-
+  <style>
+    /* Style added to position the link */
+    .quiz-container a {
+      float: right;
+    }
+    
+    /* Style added for the icon's size and spacing */
+    .back-button-icon {
+      width: 32px;
+      height: 32px;
+      margin: 10px 10px 0 0;
+    }
+  </style>
+</head>
 <body>
+  <div class="quiz-header">
+    <div class="timer-container">
+      <span>Time Left: </span>
+      <span id="timer">60</span>s
+    </div>
+    <div class="score-display">
+      <span>Score: </span>
+      <span id="scoree">0</span>
+    </div>
+  </div>
+  
   <div class="quiz-container">
-    <!--  Added progress header -->
+    <!-- Progress header -->
     <div class="progress-header">
       <div style="display: flex; justify-content: space-between; align-items: center;">
         <h2 style="margin: 0; color: #333; font-size: 24px;">Git & GitHub Quiz</h2>
@@ -34,7 +44,7 @@
         </a>
       </div>
       
-      <!--  Progress bar -->
+      <!-- Progress bar -->
       <div class="progress-container">
         <div class="progress-info">
           <span id="progress-text">Progress: 0 / 10</span>
@@ -45,16 +55,29 @@
         </div>
       </div>
     </div>
-        
+    
     <div class="quiz-section">
-      <!-- Added a scrollable container to hold the questions -->
+      <!-- Start and Restart buttons -->
+      <div class="btnclass">
+        <button id="start-btn">Start</button>
+        <button id="restart-btn">Restart</button>
+      </div>
+      
+      <!-- Scrollable container to hold the questions -->
       <div class="questions-scroll-container">
-      <div id="git-questions"></div>
+        <div id="git-questions"></div>
       </div>
     </div>
-        
+    
     <div id="result"></div>
+    <a href="index.html">Back to Home</a>
   </div>
+
+  <!-- "Restart Quiz" Button -->
+  <div id="resultBox">
+    <button id="restartQuizBtn">Restart Quiz</button>
+  </div>
+
   <script src="script.js"></script>
 </body>
 </html>
