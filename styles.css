@@ -301,3 +301,46 @@ button:hover {
         color: #b71c1c;
     }
 }
+/*navbar*/
+.mynavbar {
+ background: linear-gradient(135deg, #4f8cff, #8f94fb, #c3cfe2);
+  padding: 2.2rem 2rem;
+  font-family: Arial, sans-serif;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  color: #fff;
+    font-weight: 500;
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.4);
+    font-size: 1rem;
+    border-top: 0.055rem solid white;
+   
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links .link {
+  text-decoration: none;
+  color: #000;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.nav-links .link:hover {
+  text-decoration: underline;
+  color: #333;
+}
+
+
