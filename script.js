@@ -2,6 +2,7 @@
 const htmlQuestions = [
   {
     question: "What does HTML stand for?",
+
     options: [
       "HyperText Markup Language",
       "HyperText Management Language",
@@ -24,6 +25,7 @@ const htmlQuestions = [
       "To create the body of the page.",
     ],
     answer: "To provide metadata and links to external resources.",
+
   },
   {
     question: "Which attribute is used to specify an alternate text for an image if the image cannot be displayed?",
@@ -33,6 +35,7 @@ const htmlQuestions = [
   {
     question: "Which attribute specifies that an input field must be filled out before submitting?",
     options: ["required", "placeholder", "value", "mandatory"],
+
     answer: "required",
   },
   {
@@ -44,15 +47,19 @@ const htmlQuestions = [
       "Defines the image's resolution",
     ],
     answer: "Provides a textual description of the image",
+
   },
   {
     question: "What does the <head> element in HTML contain?",
     options: ["Metadata about the page", "Visible content of the page", "Footer information", "Navigation links"],
+
     answer: "Metadata about the page",
+
   },
   {
     question: "Which HTML element is used to define a paragraph?",
     options: ["p", "text", "div", "span"],
+
     answer: "p",
   },
   {
@@ -64,19 +71,23 @@ const htmlQuestions = [
       "<music src='audio.mp3'></music>",
     ],
     answer: "<audio src='audio.mp3'></audio>",
+
   },
   {
     question: "Which HTML element is used to define an ordered list?",
     options: ["ul", "li", "ol", "ol-list"],
+
     answer: "ol",
   },
 ]
 
 // DBMS questions
+
 const dbmsQuestions = [
   {
     question: "Which of the following is a type of DBMS?",
     options: ["Hierarchical", "Relational", "Network", "All of the above"],
+
     answer: "All of the above",
   },
   {
@@ -88,60 +99,88 @@ const dbmsQuestions = [
       "Standard Query Language",
     ],
     answer: "Structured Query Language",
+
   },
   {
     question: "Which command is used to remove all rows from a table without logging the individual row deletions?",
     options: ["DELETE", "DROP", "TRUNCATE", "REMOVE"],
+
     answer: "TRUNCATE",
+
   },
   {
     question: "In ER diagrams, what does a diamond shape represent?",
     options: ["Entity", "Attribute", "Relationship", "Primary Key"],
+
     answer: "Relationship",
+
   },
   {
     question: "Which of the following is not a property of a transaction?",
     options: ["Atomicity", "Consistency", "Compilation", "Isolation"],
+
     answer: "Compilation",
+=======
+    answer: "Compilation"
+
   },
   {
     question: "Which SQL clause is used to filter records?",
     options: ["SELECT", "WHERE", "FROM", "ORDER BY"],
+
     answer: "WHERE",
+=======
+    answer: "WHERE"
+
   },
   {
     question: "What is the main purpose of normalization in DBMS?",
     options: ["To increase redundancy", "To create backup", "To eliminate data redundancy", "To improve speed"],
+
     answer: "To eliminate data redundancy",
+=======
+    answer: "To eliminate data redundancy"
+
   },
   {
     question: "Which normal form removes transitive dependency?",
     options: ["1NF", "2NF", "3NF", "BCNF"],
+
     answer: "3NF",
+
+
   },
   {
     question: "Which key uniquely identifies a record in a table?",
     options: ["Foreign key", "Secondary key", "Primary key", "Candidate key"],
-    answer: "Primary key",
+   answer: "Primary key",
+
   },
   {
     question: "Which language is used to define the structure of a database schema?",
     options: ["DCL", "DML", "DDL", "TCL"],
+
     answer: "DDL",
+
   },
   {
     question: "Which of the following is not a DML command?",
     options: ["SELECT", "INSERT", "UPDATE", "DROP"],
+
     answer: "DROP",
+
   },
   {
     question: "Which index allows faster search of records?",
     options: ["Hash index", "B-tree index", "Both", "None"],
+
     answer: "Both",
+
   },
   {
     question: "Which command is used to delete a table from a database?",
     options: ["DELETE TABLE", "DROP TABLE", "REMOVE TABLE", "ERASE TABLE"],
+
     answer: "DROP TABLE",
   },
   {
@@ -153,17 +192,24 @@ const dbmsQuestions = [
       "foreign_key emp_id on employees;",
     ],
     answer: "foreign key (emp_id) references employees(emp_id);",
+
   },
   {
     question: "Which join returns all records from both tables when there is a match?",
     options: ["INNER JOIN", "LEFT JOIN", "RIGHT JOIN", "FULL OUTER JOIN"],
+
     answer: "FULL OUTER JOIN",
   },
 ]
 
+
+
+
+
 // CSS Questions
 const cssQuestions = [
   {
+
     question:
       "Which of the following is the correct CSS syntax for selecting an element with the class name 'example'?",
     options: [
@@ -183,15 +229,19 @@ const cssQuestions = [
       "The size of an element",
     ],
     answer: "The layout behavior of an element",
+
   },
   {
     question: "Which CSS property is used to change the background color of an element?",
     options: ["color", "bgcolor", "background-color", "background"],
+
     answer: "background-color",
+
   },
   {
     question: "Which CSS property is used to change the font size of an element?",
     options: ["font-style", "font-size", "text-size", "size"],
+
     answer: "font-size",
   },
   {
@@ -203,39 +253,53 @@ const cssQuestions = [
       "image-background: url('image.jpg');",
     ],
     answer: "background-image: url('image.jpg');",
+
   },
   {
     question: "Which CSS property controls the space between words?",
     options: ["letter-spacing", "word-spacing", "text-spacing", "line-height"],
+
     answer: "word-spacing",
+
   },
   {
     question: "Which property is used to change the color of text in CSS?",
     options: ["color", "text-color", "font-color", "background-color"],
+
     answer: "color",
+
   },
   {
     question: "How do you select an element with the id 'header' in CSS?",
     options: ["#header", ".header", "header", "[id='header']"],
+
     answer: "#header",
+=======
+    answer: "#header"
+
   },
   {
     question: "What is the default value of the position property in CSS?",
     options: ["static", "relative", "absolute", "fixed"],
+
     answer: "static",
+
   },
   {
     question: "Which CSS property is used to add space between an element's border and its content?",
     options: ["padding", "margin", "border-spacing", "gap"],
+
     answer: "padding",
   },
 ]
 
 // C++ Questions
+
 const cppQuestions = [
   {
     question: "Which of the following is the correct way to declare a variable in C++?",
     options: ["int x;", "x int;", "int x = 0;", "int x: 0;"],
+
     answer: "int x;",
   },
   {
@@ -287,10 +351,12 @@ const cppQuestions = [
     question: "What is the correct syntax for a single-line comment in C++?",
     options: ["// This is a comment", "/* This is a comment */", "# This is a comment", "<!-- This is a comment -->"],
     answer: "// This is a comment",
+
   },
   {
     question: "Which of the following is used to include a standard library in C++?",
     options: ["#include <iostream>", "#include iostream", "import iostream", "#include <iostream.h>"],
+
     answer: "#include <iostream>",
   },
   {
@@ -300,10 +366,12 @@ const cppQuestions = [
   },
 ]
 
+
 // JavaScript Questions
 const jsQuestions = [
   {
     question: "Which of the following is the correct way to define a function in JavaScript?",
+
     options: [
       "function myFunction() { }",
       "def myFunction() { }",
@@ -311,53 +379,70 @@ const jsQuestions = [
       "func myFunction() { }",
     ],
     answer: "function myFunction() { }",
+
   },
   {
     question: "How do you declare a variable in JavaScript?",
     options: ["var myVariable;", "let myVariable;", "const myVariable;", "All of the above"],
+
     answer: "All of the above",
+
   },
   {
     question: "Which of the following is used to add an item to the end of an array in JavaScript?",
     options: ["array.push(item);", "array.add(item);", "array.append(item);", "array.insert(item);"],
+
     answer: "array.push(item);",
+
   },
   {
     question: "Which method is used to convert a string to lowercase in JavaScript?",
     options: ["toLowerCase()", "lowercase()", "toLower()", "convertLower()"],
+
     answer: "toLowerCase()",
   },
   {
     question: "Which operator is used to assign a value to a variable in JavaScript?",
     options: ["=", "==", "===", ":="],
     answer: "=",
+
   },
   {
     question: "What is the output of 5 + '5' in JavaScript?",
     options: ["55", "10", "error", "undefined"],
+
     answer: "55",
+
   },
   {
     question: "Which method is used to remove the last element from an array in JavaScript?",
     options: ["pop()", "remove()", "shift()", "slice()"],
+
     answer: "pop()",
+
   },
   {
     question: "Which statement is used to stop a loop in JavaScript?",
     options: ["break", "exit", "stop", "return"],
+
     answer: "break",
+
   },
   {
     question: "How do you create an object in JavaScript?",
     options: ["let obj = {};", "let obj = [];", "let obj = new Object();", "Both A and C"],
+
     answer: "Both A and C",
+
   },
   {
     question: "What does the 'this' keyword refer to in JavaScript?",
     options: ["The current function", "The global object", "The object it belongs to", "The previous variable"],
+
     answer: "The object it belongs to",
   },
 ]
+
 
 // React Questions
 const reactQuestions = [
@@ -598,6 +683,7 @@ const gitQuestions = [
 
 // Python Questions
 const pythonQuestions = [
+
   {
     question: "Which keyword is used to define a function in Python?",
     options: ["function", "def", "func", "define"],
@@ -654,6 +740,7 @@ const pythonQuestions = [
     answer: "break",
   },
 ]
+
 
 // SQL Questions
 const sqlQuestions = [
@@ -856,6 +943,7 @@ const dsaQuestions = [
 const answeredQuestions = new Set()
 let totalQuestions = 0
 
+
 // Function to update progress bar
 function updateProgressBar() {
   const progressText = document.getElementById("progress-text")
@@ -919,10 +1007,12 @@ function initializeTimer() {
 
 function stop() {
   clearInterval(timeinterval)
+
 }
 
 function start() {
   if (timeinterval) {
+
     clearInterval(timeinterval)
   }
   actualtime = 60
@@ -964,10 +1054,12 @@ if (restartBtn) {
   restartBtn.addEventListener("click", () => {
     initializeTimer()
   })
+
 }
 
 // Function to render a single question
 const renderQuestion = (question, index, sectionId) => {
+
   const sectionContainer = document.getElementById(sectionId)
   if (!sectionContainer) return
 
@@ -1015,6 +1107,8 @@ const renderQuestion = (question, index, sectionId) => {
   sectionContainer.appendChild(questionElem)
 }
 
+
+
 // Function to render all questions
 const renderQuestions = (questions, sectionId) => {
   // Ensure we don't try to render if the section doesn't exist.
@@ -1039,6 +1133,7 @@ const renderQuestions = (questions, sectionId) => {
   // Initialize progress bar
   updateProgressBar()
 }
+
 
 // Function to check the answer for a specific question
 const checkAnswer = (questions, index) => {
@@ -1075,7 +1170,11 @@ const checkAnswer = (questions, index) => {
     autoScrollToNext(index)
     return false
   }
+
 }
+
+
+};
 
 // Function to calculate the total score
 const calculateTotalScore = (questions) => {
@@ -1085,10 +1184,14 @@ const calculateTotalScore = (questions) => {
     if (selectedOption && selectedOption.value === q.answer) {
       score++
     }
+
     globalscore = score
   })
 
   updateGlobalScore()
+
+
+  updateGlobleScore();
 
   // Display the total score
   const totalScoreContainer = document.getElementById("total-score")
@@ -1097,7 +1200,9 @@ const calculateTotalScore = (questions) => {
 }
 
 // Dynamically render questions based on the page
+
 let currentQuestions = []
+
 
 document.addEventListener("DOMContentLoaded", () => {
   let questions = []
@@ -1108,11 +1213,13 @@ document.addEventListener("DOMContentLoaded", () => {
     questions = htmlQuestions
     sectionId = "html-questions"
   } else if (document.getElementById("css-questions")) {
+
     questions = cssQuestions
     sectionId = "css-questions"
   } else if (document.getElementById("cpp-questions")) {
     questions = cppQuestions
     sectionId = "cpp-questions"
+
   } else if (document.getElementById("js-questions")) {
     questions = jsQuestions
     sectionId = "js-questions"
@@ -1132,6 +1239,7 @@ document.addEventListener("DOMContentLoaded", () => {
     questions = sqlQuestions
     sectionId = "sql-questions"
   } else if (document.getElementById("django-questions")) {
+
     questions = djangoQuestions
     sectionId = "django-questions"
   } else if (document.getElementById("dsa-questions")) {
@@ -1146,6 +1254,7 @@ document.addEventListener("DOMContentLoaded", () => {
     currentQuestions = questions
     renderQuestions(questions, sectionId)
 
+
     document.querySelectorAll(".check-answer-btn").forEach((button) => {
       button.addEventListener("click", (event) => {
         const index = Number.parseInt(event.target.getAttribute("data-index"))
@@ -1154,6 +1263,7 @@ document.addEventListener("DOMContentLoaded", () => {
     })
 
     document.getElementById("calculate-score-btn")?.addEventListener("click", () => {
+
       initializeTimer()
       calculateTotalScore(questions)
     })
@@ -1246,3 +1356,4 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 })
+

@@ -1,9 +1,11 @@
 /* Base Styling */
 body {
+
   font-family: Arial, sans-serif;
   background-color: #f4f4f4;
   margin: 0;
   padding: 0;
+
 }
 
 .quiz-container {
@@ -122,6 +124,7 @@ button:hover {
   box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.4);
   font-size: 1rem;
   border-top: 0.055rem solid white;
+
 }
 
 .footer-container p {
@@ -186,15 +189,18 @@ button:hover {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+
 .btnclass {
   display: flex;
   justify-content: space-between;
   align-items: center;
   text-align: center;
+
 }
 
 .timer-container,
 .score-display {
+
   display: flex;
   align-items: center;
   gap: 8px;
@@ -382,4 +388,5 @@ button.answered:hover {
   display: block;
   margin-top: 15px;
   font-weight: bold;
+
 }

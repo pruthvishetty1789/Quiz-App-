@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,22 +13,24 @@
       margin-right: 0;
       float: right;
     }
-    
+
     .back-button-icon {
       width: 32px;
       height: 32px;
       margin: 10px 10px 0 0;
     }
+
     
     .question-container {
       margin-bottom: 20px;
     }
     
+
     .result {
       margin-top: 10px;
       font-weight: bold;
     }
-    
+
     .quiz-header {
       display: flex;
       justify-content: space-between;
@@ -43,14 +46,14 @@
       right: 0;
       z-index: 1000;
     }
-    
+
     .btnclass {
       display: flex;
       justify-content: space-between;
       align-items: center;
       text-align: center;
     }
-    
+
     .timer-container,
     .score-display {
       display: flex;
@@ -59,36 +62,39 @@
       font-size: 18px;
       font-weight: 500;
     }
-    
+
     .timer-container {
       color: #d32f2f;
       background-color: #ffebee;
       padding: 8px 12px;
       border-radius: 20px;
     }
-    
+
     .score-display {
       color: #2e7d32;
       background-color: #e8f5e9;
       padding: 8px 12px;
       border-radius: 20px;
     }
-    
+
     #timer,
     #score {
       font-weight: bold;
       min-width: 25px;
       text-align: center;
     }
+
     
     .timer-warning {
       animation: pulse 1s infinite alternate;
     }
     
+
     @keyframes pulse {
       from {
         transform: scale(1);
       }
+
       to {
         transform: scale(1.1);
         color: #b71c1c;
@@ -96,6 +102,7 @@
     }
   </style>
 </head>
+
 <body>
   <div class="quiz-header">
     <div class="timer-container">
@@ -107,6 +114,7 @@
       <span id="scoree">0</span>
     </div>
   </div>
+
   
   <div class="quiz-container">
     <!-- Progress header -->
@@ -135,19 +143,23 @@
     
     <div class="quiz-section">
       <!-- Start and Restart buttons -->
+
       <div class="btnclass">
         <button id="start-btn">Start</button>
         <button id="restart-btn">Restart</button>
       </div>
+
       
       <!-- Scrollable container to hold the questions -->
       <div class="questions-scroll-container">
         <div id="html-questions"></div>
       </div>
+
     </div>
-    
+
     <div id="result"></div>
   </div>
+
 
   <!-- "Restart Quiz" Button -->
   <div id="resultBox">
@@ -156,4 +168,5 @@
 
   <script src="script.js"></script>
 </body>
+
 </html>
