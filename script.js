@@ -53,6 +53,88 @@ const htmlQuestions = [
   },
 ];
 
+//dbms questions
+const dbmsQuestions = [
+  {
+    question: "Which of the following is a type of DBMS?",
+    options: ["Hierarchical", "Relational", "Network", "All of the above"],
+    answer: "All of the above"
+  },
+  {
+    question: "What does SQL stand for?",
+    options: ["Structured Query Language", "Simple Query Language", "Sequential Query Language", "Standard Query Language"],
+    answer: "Structured Query Language"
+  },
+  {
+    question: "Which command is used to remove all rows from a table without logging the individual row deletions?",
+    options: ["DELETE", "DROP", "TRUNCATE", "REMOVE"],
+    answer: "TRUNCATE"
+  },
+  {
+    question: "In ER diagrams, what does a diamond shape represent?",
+    options: ["Entity", "Attribute", "Relationship", "Primary Key"],
+    answer: "Relationship"
+  },
+  {
+    question: "Which of the following is not a property of a transaction?",
+    options: ["Atomicity", "Consistency", "Compilation", "Isolation"],
+    answer: "Compilation"
+  },
+  {
+    question: "Which SQL clause is used to filter records?",
+    options: ["SELECT", "WHERE", "FROM", "ORDER BY"],
+    answer: "WHERE"
+  },
+  {
+    question: "What is the main purpose of normalization in DBMS?",
+    options: ["To increase redundancy", "To create backup", "To eliminate data redundancy", "To improve speed"],
+    answer: "To eliminate data redundancy"
+  },
+  {
+    question: "Which normal form removes transitive dependency?",
+    options: ["1NF", "2NF", "3NF", "BCNF"],
+    answer: "3NF"
+  },
+  {
+    question: "Which key uniquely identifies a record in a table?",
+    options: ["Foreign key", "Secondary key", "Primary key", "Candidate key"],
+    answer: "Primary key"
+  },
+  {
+    question: "Which language is used to define the structure of a database schema?",
+    options: ["DCL", "DML", "DDL", "TCL"],
+    answer: "DDL"
+  },
+  {
+    question: "Which of the following is not a DML command?",
+    options: ["SELECT", "INSERT", "UPDATE", "DROP"],
+    answer: "DROP"
+  },
+  {
+    question: "Which index allows faster search of records?",
+    options: ["Hash index", "B-tree index", "Both", "None"],
+    answer: "Both"
+  },
+  {
+    question: "Which command is used to delete a table from a database?",
+    options: ["DELETE TABLE", "DROP TABLE", "REMOVE TABLE", "ERASE TABLE"],
+    answer: "DROP TABLE"
+  },
+  {
+    question: "Which of these is a correct foreign key definition?",
+    options: ["foreign key (emp_id) references employees(emp_id);", "foreignkey(emp_id) refers employees(emp_id);", "foreign emp_id key employees(emp_id);", "foreign_key emp_id on employees;"],
+    answer: "foreign key (emp_id) references employees(emp_id);"
+  },
+  {
+    question: "Which join returns all records from both tables when there is a match?",
+    options: ["INNER JOIN", "LEFT JOIN", "RIGHT JOIN", "FULL OUTER JOIN"],
+    answer: "FULL OUTER JOIN"
+  }
+];
+
+
+
+
 // CSS Questions
 const cssQuestions = [
   {
@@ -585,17 +667,17 @@ document.addEventListener("DOMContentLoaded", () => {
   let questions = [];
   let sectionId = "";
 
-  // Determine the quiz type based on the section ID
+  // Determine the quiz type
   if (document.getElementById("html-questions")) {
     questions = htmlQuestions;
     sectionId = "html-questions";
   } else if (document.getElementById("css-questions")) {
     questions = cssQuestions;
     sectionId = "css-questions";
-  }else if (document.getElementById("cpp-questions")) {
+  } else if (document.getElementById("cpp-questions")) {
     questions = cppQuestions;
     sectionId = "cpp-questions";
-  }  else if (document.getElementById("js-questions")) {
+  } else if (document.getElementById("js-questions")) {
     questions = jsQuestions;
     sectionId = "js-questions";
   } else if (document.getElementById("react-questions")) {
@@ -616,17 +698,18 @@ document.addEventListener("DOMContentLoaded", () => {
   } else if (document.getElementById("django-questions")) {
     questions = djangoQuestions;
     sectionId = "django-questions";
-  }else if(document.getElementById("dsa-questions")){
+  } else if (document.getElementById("dsa-questions")) {
     questions = dsaQuestions;
-     sectionId = "dsa-questions";
+    sectionId = "dsa-questions";
+  } else if (document.getElementById("dbms-questions")) {
+    questions = dbmsQuestions;
+    sectionId = "dbms-questions";
   }
 
-  // Render questions and attach event listeners only if a valid section is found
   if (sectionId) {
     currentQuestions = questions;
     renderQuestions(questions, sectionId);
 
-    // Attach event listeners to "Check Answer" buttons
     document.querySelectorAll(".check-answer-btn").forEach((button) => {
       button.addEventListener("click", (event) => {
         const index = parseInt(event.target.getAttribute("data-index"));
@@ -634,130 +717,106 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
 
-document.getElementById("calculate-score-btn").addEventListener("click", () => {
-  initializeTimer();
+    document.getElementById("calculate-score-btn")?.addEventListener("click", () => {
+      initializeTimer();
+      calculateTotalScore(questions);
+    });
 
-  calculateTotalScore(questions);
-});
-
-document.getElementById("feedback-btn").addEventListener("click", () => {
-  window.location.href = "contact-us.html";
-});
-
+    document.getElementById("feedback-btn")?.addEventListener("click", () => {
+      window.location.href = "contact-us.html";
+    });
   }
-// Function to toggle Feedback and Issue sections based on selected reason
-document.addEventListener("DOMContentLoaded", function () {
-    const reasonSelect = document.getElementById("reason");
-    const feedbackSection = document.getElementById("feedback-Section");
-    const issueSection = document.getElementById("issue-Section");
-    const contactForm = document.getElementById("contact-Form");
-    const contactResponseMessage = document.getElementById("responseMessage"); // For messages on the contact form page
 
-    // --- Function to show/hide sections and manage 'required' attributes ---
-    function toggleFormSections() {
-        if (!reasonSelect) return; // Exit if not on the contact form page
-
-        const selectedReason = reasonSelect.value;
-
-        // Hide both sections initially
-        feedbackSection.style.display = 'none';
-        issueSection.style.display = 'none';
-
-        // Set 'required' for elements within each section based on selection
-        setRequired(feedbackSection, false); // Unset all required first
-        setRequired(issueSection, false); // Unset all required first
-
-        if (selectedReason === 'feedback') {
-            feedbackSection.style.display = 'block';
-            setRequired(feedbackSection, true);
-        } else if (selectedReason === 'issue') {
-            issueSection.style.display = 'block';
-            setRequired(issueSection, true);
-        }
-    }
-
-    // Helper function to set/unset 'required' attribute for inputs within a section
-    function setRequired(sectionElement, isRequired) {
-        // Select all relevant form elements within the given section
-        const inputs = sectionElement.querySelectorAll('input:not([type="file"]), textarea, select');
-        inputs.forEach(input => {
-            // Set or remove the 'required' attribute
-            input.required = isRequired;
-        });
-    }
-
-    // --- Logic for the Contact Form Page (contact-us.html) ---
-    if (contactForm) { // Check if the contact form elements exist on the current page
-        // Initial call to set the correct section visibility on page load
-        toggleFormSections();
-
-        // Event listener for changes in the 'Reason for Contact' select box
-        reasonSelect.addEventListener("change", toggleFormSections);
-
-        // Handle form submission
-        contactForm.addEventListener("submit", function (e) {
-            e.preventDefault(); // Prevent default form submission
-
-            // Use the browser's built-in validation
-            if (!contactForm.checkValidity()) {
-                contactResponseMessage.textContent = 'Please fill out all required fields.';
-                contactResponseMessage.style.color = 'red';
-                return;
-            }
-
-            // At this point, the form is valid based on HTML5 'required' attributes
-
-            const selectedReason = reasonSelect.value;
-            let successMessage = "";
-
-            if (selectedReason === "feedback") {
-                successMessage = "Thank you for your feedback! We appreciate it.";
-            } else if (selectedReason === "issue") {
-                successMessage = "Your issue has been reported. Thank you!";
-            } else {
-                successMessage = "Form submitted successfully!"; // Fallback for no specific reason selected (though 'required' should prevent this)
-            }
-
-            // Simulate form data collection (for real scenario, you'd send this to a server)
-            const formData = new FormData(contactForm);
-            const data = {};
-            for (let [key, value] of formData.entries()) {
-                data[key] = value;
-            }
-            console.log("Form Data Submitted:", data);
-
-            // Store the success message in session storage
-            sessionStorage.setItem('formSubmissionSuccess', successMessage);
-
-            // Redirect to index.html
-            window.location.href = 'index.html';
-        });
-    }
-
-    // --- Logic for the Index Page (index.html) ---
-    const submissionMessageDiv = document.getElementById("submission-message");
-    if (submissionMessageDiv) { // Check if the submission message div exists on the current page
-        const message = sessionStorage.getItem('formSubmissionSuccess');
-        if (message) {
-            submissionMessageDiv.textContent = message;
-            submissionMessageDiv.style.color = "green";
-            submissionMessageDiv.style.fontWeight = "bold";
-            submissionMessageDiv.style.margin = "15px 0"; // Apply styling
-            sessionStorage.removeItem('formSubmissionSuccess'); // Clear the message after displaying
-        }
-    }
-});
-
-// Added "Restart Quiz" Feature
-function restartQuiz() {
-  if (confirm('Are you sure you want to restart the quiz? All progress will be lost.')) {
-    window.location.reload();
-  }
-}
-document.addEventListener("DOMContentLoaded", () => {
-  const restartBtn = document.getElementById('restartQuizBtn');
+  // Restart quiz handler
+  const restartBtn = document.getElementById("restartQuizBtn");
   if (restartBtn) {
-    restartBtn.addEventListener('click', restartQuiz);
+    restartBtn.addEventListener("click", () => {
+      if (confirm("Are you sure you want to restart the quiz? All progress will be lost.")) {
+        window.location.reload();
+      }
+    });
+  }
+
+  // Contact form logic
+  const reasonSelect = document.getElementById("reason");
+  const feedbackSection = document.getElementById("feedback-Section");
+  const issueSection = document.getElementById("issue-Section");
+  const contactForm = document.getElementById("contact-Form");
+  const contactResponseMessage = document.getElementById("responseMessage");
+
+  function toggleFormSections() {
+    if (!reasonSelect) return;
+
+    const selectedReason = reasonSelect.value;
+
+    feedbackSection.style.display = "none";
+    issueSection.style.display = "none";
+
+    setRequired(feedbackSection, false);
+    setRequired(issueSection, false);
+
+    if (selectedReason === "feedback") {
+      feedbackSection.style.display = "block";
+      setRequired(feedbackSection, true);
+    } else if (selectedReason === "issue") {
+      issueSection.style.display = "block";
+      setRequired(issueSection, true);
+    }
+  }
+
+  function setRequired(sectionElement, isRequired) {
+    const inputs = sectionElement.querySelectorAll('input:not([type="file"]), textarea, select');
+    inputs.forEach((input) => {
+      input.required = isRequired;
+    });
+  }
+
+  if (contactForm) {
+    toggleFormSections();
+    reasonSelect.addEventListener("change", toggleFormSections);
+
+    contactForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      if (!contactForm.checkValidity()) {
+        contactResponseMessage.textContent = "Please fill out all required fields.";
+        contactResponseMessage.style.color = "red";
+        return;
+      }
+
+      const selectedReason = reasonSelect.value;
+      let successMessage = "";
+
+      if (selectedReason === "feedback") {
+        successMessage = "Thank you for your feedback! We appreciate it.";
+      } else if (selectedReason === "issue") {
+        successMessage = "Your issue has been reported. Thank you!";
+      } else {
+        successMessage = "Form submitted successfully!";
+      }
+
+      const formData = new FormData(contactForm);
+      const data = {};
+      for (let [key, value] of formData.entries()) {
+        data[key] = value;
+      }
+      console.log("Form Data Submitted:", data);
+
+      sessionStorage.setItem("formSubmissionSuccess", successMessage);
+      window.location.href = "index.html";
+    });
+  }
+
+  // Display submission message on index
+  const submissionMessageDiv = document.getElementById("submission-message");
+  if (submissionMessageDiv) {
+    const message = sessionStorage.getItem("formSubmissionSuccess");
+    if (message) {
+      submissionMessageDiv.textContent = message;
+      submissionMessageDiv.style.color = "green";
+      submissionMessageDiv.style.fontWeight = "bold";
+      submissionMessageDiv.style.margin = "15px 0";
+      sessionStorage.removeItem("formSubmissionSuccess");
+    }
   }
 });
-
