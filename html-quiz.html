@@ -5,45 +5,54 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>HTML Quiz</title>
   <link rel="stylesheet" href="styles.css">
-</head>
-<style>
-  .quiz-container a {
-    display: block; 
-    text-align: right; 
-    margin-right: 0; 
-    float: right; 
-  }
-  
-  /* Added style just for the icon's size and spacing */
-  .back-button-icon {
-    width: 32px; /* Sets the size of the icon */
-    height: 32px;
-    margin: 10px 10px 0 0; /* Adds a little space from the top/right edges */
-  }
+</head> 
 
-  /* UNCHANGED */
-  .question-container {
-      margin-bottom: 20px;
-    }
-  .result {
-      margin-top: 10px;
-      font-weight: bold;
-    }
+<style>
+  /* Style added to position the link */
+  .quiz-container a {
+    float: right;   
+  }    
+  /* Style added for the icon's size and spacing */
+  .back-button-icon {
+    width: 32px;
+    height: 32px;
+    margin: 10px 10px 0 0;
+  }
 </style>
+
 <body>
   <div class="quiz-container">
-    <a href="index.html" class="back-button-icon" aria-label="Back to Home">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-        <polyline points="9 22 9 12 15 12 15 22"></polyline>
-      </svg>
-    </a>
+    <!--  Added progress header -->
+    <div class="progress-header">
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <h2 style="margin: 0; color: #333; font-size: 24px;">HTML Quiz</h2>
+        <a href="index.html" class="back-button-icon" aria-label="Back to Home">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+          </svg>
+        </a>
+      </div>
+      
+      <!--  Progress bar -->
+      <div class="progress-container">
+        <div class="progress-info">
+          <span id="progress-text">Progress: 0 / 10</span>
+          <span id="progress-percentage">0%</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill" id="progress-fill"></div>
+        </div>
+      </div>
+    </div>
 
     <div class="quiz-section">
-      <h2>HTML Quiz</h2>
+      <!-- Added a scrollable container to hold the questions -->
+      <div class="questions-scroll-container">
       <div id="html-questions"></div>
+      </div>
     </div>
-    
+        
     <div id="result"></div>
   </div>
   <script src="script.js"></script>
