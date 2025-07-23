@@ -1,18 +1,19 @@
 // HTML Questions
 const htmlQuestions = [
-  { question: "What does HTML stand for?",
-     options: ["HyperText Markup Language", "HyperText Management Language", "Home Tool Markup Language", "Hyper Transfer Markup Language"],
-     answer: "HyperText Markup Language" 
-     },
-  
-  { 
-    question: "What attribute is used to define the destination of a link in HTML?", 
-    options: ["href", "src", "action", "destination"], 
-    answer: "href" 
+  {
+    question: "What does HTML stand for?",
+    options: ["HyperText Markup Language", "HyperText Management Language", "Home Tool Markup Language", "Hyper Transfer Markup Language"],
+    answer: "HyperText Markup Language"
+  },
+
+  {
+    question: "What attribute is used to define the destination of a link in HTML?",
+    options: ["href", "src", "action", "destination"],
+    answer: "href"
   },
   {
     question: "What is the purpose of the <head> element in an HTML document?",
-    options: ["To define the main content of the page.","To provide metadata and links to external resources.","To display headings on the page.","To create the body of the page."],
+    options: ["To define the main content of the page.", "To provide metadata and links to external resources.", "To display headings on the page.", "To create the body of the page."],
     answer: "To provide metadata and links to external resources."
   },
   {
@@ -25,135 +26,138 @@ const htmlQuestions = [
     options: ["required", "placeholder", "value", "mandatory"],
     answer: "required"
   },
-  { 
-    question: "What is the purpose of the alt attribute in an image tag?", 
-    options: ["Specifies the title of the image", "Provides a textual description of the image", "Specifies the location of the image", "Defines the image's resolution"], 
-    answer: "Provides a textual description of the image" },
-  { 
-    question: "What does the <head> element in HTML contain?", 
-    options: ["Metadata about the page", "Visible content of the page", "Footer information", "Navigation links"], 
-    answer: "Metadata about the page"
-   },
-  { 
-    question: "Which HTML element is used to define a paragraph?",
-     options: ["p", "text", "div", "span"],
-      answer: "p"
-     },
-  { 
-    question: "What is the correct HTML for inserting an audio file?", 
-    options: ["<audio src='audio.mp3'></audio>", "<audio file='audio.mp3'></audio>", "<audio url='audio.mp3'></audio>", "<music src='audio.mp3'></music>"], 
-    answer: "<audio src='audio.mp3'></audio>" 
+  {
+    question: "What is the purpose of the alt attribute in an image tag?",
+    options: ["Specifies the title of the image", "Provides a textual description of the image", "Specifies the location of the image", "Defines the image's resolution"],
+    answer: "Provides a textual description of the image"
   },
-  { 
-    question: "Which HTML element is used to define an ordered list?", 
-    options: ["ul", "li", "ol", "ol-list"], 
+  {
+    question: "What does the <head> element in HTML contain?",
+    options: ["Metadata about the page", "Visible content of the page", "Footer information", "Navigation links"],
+    answer: "Metadata about the page"
+  },
+  {
+    question: "Which HTML element is used to define a paragraph?",
+    options: ["p", "text", "div", "span"],
+    answer: "p"
+  },
+  {
+    question: "What is the correct HTML for inserting an audio file?",
+    options: ["<audio src='audio.mp3'></audio>", "<audio file='audio.mp3'></audio>", "<audio url='audio.mp3'></audio>", "<music src='audio.mp3'></music>"],
+    answer: "<audio src='audio.mp3'></audio>"
+  },
+  {
+    question: "Which HTML element is used to define an ordered list?",
+    options: ["ul", "li", "ol", "ol-list"],
     answer: "ol"
-   },
+  },
 ];
 
 // CSS Questions
 const cssQuestions = [
-  { 
-    question: "Which of the following is the correct CSS syntax for selecting an element with the class name 'example'?", 
-    options: [".example { color: red; }", "example { color: red; }", "#example { color: red; }", "*example { color: red; }"], 
-    answer: ".example { color: red; }" 
-  },
-  { 
-    question: "What does the CSS display property control?", 
-    options: ["The visibility of an element", "The layout behavior of an element", "The background color of an element", "The size of an element"], 
-    answer: "The layout behavior of an element" 
-  },
-  { 
-    question: "Which CSS property is used to change the background color of an element?", 
-    options: ["color", "bgcolor", "background-color", "background"], 
-    answer: "background-color" 
+  {
+    question: "Which of the following is the correct CSS syntax for selecting an element with the class name 'example'?",
+    options: [".example { color: red; }", "example { color: red; }", "#example { color: red; }", "*example { color: red; }"],
+    answer: ".example { color: red; }"
   },
   {
-     question: "Which CSS property is used to change the font size of an element?", 
-     options: ["font-style", "font-size", "text-size", "size"], 
-     answer: "font-size"
+    question: "What does the CSS display property control?",
+    options: ["The visibility of an element", "The layout behavior of an element", "The background color of an element", "The size of an element"],
+    answer: "The layout behavior of an element"
   },
-  { 
-    question: "How do you apply a background image in CSS?", 
-    options: ["background: url('image.jpg');", "background-image: 'image.jpg';", "background-image: url('image.jpg');", "image-background: url('image.jpg');"], 
-    answer: "background-image: url('image.jpg');" 
+  {
+    question: "Which CSS property is used to change the background color of an element?",
+    options: ["color", "bgcolor", "background-color", "background"],
+    answer: "background-color"
   },
-  { 
-    question: "Which CSS property controls the space between words?", 
-    options: ["letter-spacing", "word-spacing", "text-spacing", "line-height"], 
+  {
+    question: "Which CSS property is used to change the font size of an element?",
+    options: ["font-style", "font-size", "text-size", "size"],
+    answer: "font-size"
+  },
+  {
+    question: "How do you apply a background image in CSS?",
+    options: ["background: url('image.jpg');", "background-image: 'image.jpg';", "background-image: url('image.jpg');", "image-background: url('image.jpg');"],
+    answer: "background-image: url('image.jpg');"
+  },
+  {
+    question: "Which CSS property controls the space between words?",
+    options: ["letter-spacing", "word-spacing", "text-spacing", "line-height"],
     answer: "word-spacing"
-   },
-  { 
-    question: "Which property is used to change the color of text in CSS?", 
-    options: ["color", "text-color", "font-color", "background-color"], 
-    answer: "color" 
-  },
-  { 
-    question: "How do you select an element with the id 'header' in CSS?", 
-    options: ["#header", ".header", "header", "[id='header']"], 
-    answer: "#header"
-   },
-  { 
-    question: "What is the default value of the position property in CSS?", 
-    options: ["static", "relative", "absolute", "fixed"], 
-    answer: "static" 
   },
   {
-     question: "Which CSS property is used to add space between an element's border and its content?", 
-     options: ["padding", "margin", "border-spacing", "gap"], 
-     answer: "padding" 
-    }
+    question: "Which property is used to change the color of text in CSS?",
+    options: ["color", "text-color", "font-color", "background-color"],
+    answer: "color"
+  },
+  {
+    question: "How do you select an element with the id 'header' in CSS?",
+    options: ["#header", ".header", "header", "[id='header']"],
+    answer: "#header"
+  },
+  {
+    question: "What is the default value of the position property in CSS?",
+    options: ["static", "relative", "absolute", "fixed"],
+    answer: "static"
+  },
+  {
+    question: "Which CSS property is used to add space between an element's border and its content?",
+    options: ["padding", "margin", "border-spacing", "gap"],
+    answer: "padding"
+  }
 ];
 
 // JavaScript Questions
 const jsQuestions = [
-  { question: "Which of the following is the correct way to define a function in JavaScript?", 
-    options: ["function myFunction() { }", "def myFunction() { }", "function: myFunction() { }", "func myFunction() { }"], 
-    answer: "function myFunction() { }" 
+  {
+    question: "Which of the following is the correct way to define a function in JavaScript?",
+    options: ["function myFunction() { }", "def myFunction() { }", "function: myFunction() { }", "func myFunction() { }"],
+    answer: "function myFunction() { }"
   },
   {
-     question: "How do you declare a variable in JavaScript?", 
-     options: ["var myVariable;", "let myVariable;", "const myVariable;", "All of the above"], 
-     answer: "All of the above" 
-    },
+    question: "How do you declare a variable in JavaScript?",
+    options: ["var myVariable;", "let myVariable;", "const myVariable;", "All of the above"],
+    answer: "All of the above"
+  },
   {
-     question: "Which of the following is used to add an item to the end of an array in JavaScript?", 
-     options: ["array.push(item);", "array.add(item);", "array.append(item);", "array.insert(item);"], 
-     answer: "array.push(item);" 
-    },
-  { 
-    question: "Which method is used to convert a string to lowercase in JavaScript?", 
-    options: ["toLowerCase()", "lowercase()", "toLower()", "convertLower()"], 
-    answer: "toLowerCase()" 
+    question: "Which of the following is used to add an item to the end of an array in JavaScript?",
+    options: ["array.push(item);", "array.add(item);", "array.append(item);", "array.insert(item);"],
+    answer: "array.push(item);"
   },
-  { 
-    question: "Which operator is used to assign a value to a variable in JavaScript?", 
-    options: ["=", "==", "===", ":="], answer: "=" 
+  {
+    question: "Which method is used to convert a string to lowercase in JavaScript?",
+    options: ["toLowerCase()", "lowercase()", "toLower()", "convertLower()"],
+    answer: "toLowerCase()"
   },
-  { question: "What is the output of 5 + '5' in JavaScript?", 
-    options: ["55", "10", "error", "undefined"], 
+  {
+    question: "Which operator is used to assign a value to a variable in JavaScript?",
+    options: ["=", "==", "===", ":="], answer: "="
+  },
+  {
+    question: "What is the output of 5 + '5' in JavaScript?",
+    options: ["55", "10", "error", "undefined"],
     answer: "55"
-   },
-  { 
-    question: "Which method is used to remove the last element from an array in JavaScript?",
-     options: ["pop()", "remove()", "shift()", "slice()"], 
-     answer: "pop()" 
-    },
-  { 
-    question: "Which statement is used to stop a loop in JavaScript?", 
-    options: ["break", "exit", "stop", "return"], 
-    answer: "break"
-   },
-  { 
-    question: "How do you create an object in JavaScript?", 
-    options: ["let obj = {};","let obj = [];","let obj = new Object();","Both A and C"], 
-    answer: "Both A and C"
-   },
+  },
   {
-     question: "What does the 'this' keyword refer to in JavaScript?", 
-     options: ["The current function", "The global object", "The object it belongs to", "The previous variable"], 
-     answer: "The object it belongs to" 
-    }
+    question: "Which method is used to remove the last element from an array in JavaScript?",
+    options: ["pop()", "remove()", "shift()", "slice()"],
+    answer: "pop()"
+  },
+  {
+    question: "Which statement is used to stop a loop in JavaScript?",
+    options: ["break", "exit", "stop", "return"],
+    answer: "break"
+  },
+  {
+    question: "How do you create an object in JavaScript?",
+    options: ["let obj = {};", "let obj = [];", "let obj = new Object();", "Both A and C"],
+    answer: "Both A and C"
+  },
+  {
+    question: "What does the 'this' keyword refer to in JavaScript?",
+    options: ["The current function", "The global object", "The object it belongs to", "The previous variable"],
+    answer: "The object it belongs to"
+  }
 ];
 
 // --- NEW QUESTION SETS ADDED BELOW ---
@@ -299,6 +303,95 @@ const dsaQuestions = [
 
 
 
+let actualtime = 60;
+let timeleft = 60;
+let timeinterval;
+const timerElement = document.getElementById('timer');
+const scoreElement = document.getElementById('scoree');
+
+
+
+
+function updateTimerDisplay() {
+  timerElement.textContent = timeleft.toString();
+}
+function updateGlobleScore() {
+  if (scoreElement) {
+    globalscore += actualtime - timeleft;
+    scoreElement.innerHTML = globalscore.toString();
+  }
+}
+function initializeTimer() {
+  timeleft = 60;
+  timerElement.textContent = timeleft.toString();
+  document.querySelectorAll('input[type="radio"]').forEach(input => {
+    input.disabled = false;
+  });
+
+  document.querySelectorAll('.check-answer-btn').forEach(btn => {
+    btn.disabled = false;
+  })
+  stop();
+}
+
+function stop() {
+  clearInterval(timeinterval);
+}
+
+function start() {
+  if (timeinterval) {
+    clearInterval(timeinterval);
+  }
+  actualtime = 60;         
+  timeleft = actualtime; 
+  timerElement.textContent = timeleft.toString();
+
+  timeinterval = setInterval(() => {
+    timeleft--;
+
+    timerElement.innerText = timeleft.toString();
+
+    if (timeleft <= 0) {
+      clearInterval(timeinterval);
+      handleTimeUp(currentQuestions);
+    }
+  }, 1000);
+}
+
+function handleTimeUp(questions) {
+  document.querySelectorAll('input[type="radio"]').forEach(input => {
+    input.disabled = true;
+  });
+
+  document.querySelectorAll('.check-answer-btn').forEach(btn => {
+    btn.disabled = true;
+  })
+
+  const response = document.getElementById('result');
+  response.textContent = "Time`s up";
+
+  calculateTotalScore(questions);
+}
+
+
+const startBtn = document.getElementById('start-btn');
+const restartBtn = document.getElementById('restart-btn');
+
+
+if (startBtn) {
+  startBtn.addEventListener('click', () => {
+    initializeTimer();
+    start();
+  });
+}
+
+
+if (restartBtn) {
+  restartBtn.addEventListener('click', () => {
+    initializeTimer();
+  });
+}
+
 // Function to render a single question
 const renderQuestion = (question, index, sectionId) => {
   const sectionContainer = document.getElementById(sectionId);
@@ -374,6 +467,7 @@ const renderQuestions = (questions, sectionId) => {
   sectionContainer.appendChild(scoreElem);
 };
 
+
 // Function to check the answer for a specific question
 const checkAnswer = (questions, index) => {
   const selectedOption = document.querySelector(
@@ -397,7 +491,7 @@ const checkAnswer = (questions, index) => {
     return false;
   }
 };
-
+let globalscore;
 // Function to calculate the total score
 const calculateTotalScore = (questions) => {
   let score = 0;
@@ -408,7 +502,10 @@ const calculateTotalScore = (questions) => {
     if (selectedOption && selectedOption.value === q.answer) {
       score++;
     }
+    globalscore = score;
   });
+
+  updateGlobleScore();
 
   // Display the total score
   const totalScoreContainer = document.getElementById("total-score");
@@ -417,6 +514,8 @@ const calculateTotalScore = (questions) => {
 };
 
 // Dynamically render questions based on the page
+let currentQuestions = [];
+
 document.addEventListener("DOMContentLoaded", () => {
   let questions = [];
   let sectionId = "";
@@ -456,6 +555,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Render questions and attach event listeners only if a valid section is found
   if (sectionId) {
+    currentQuestions = questions;
     renderQuestions(questions, sectionId);
 
     // Attach event listeners to "Check Answer" buttons
@@ -466,16 +566,16 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
 
-    // ✅ Attach both event listeners right after injecting HTML
-  document.getElementById("calculate-score-btn")
-  .addEventListener("click", () => calculateTotalScore(questions));
+document.getElementById("calculate-score-btn").addEventListener("click", () => {
+  initializeTimer();
 
-  document.getElementById("feedback-btn")
-  .addEventListener("click", () => {
-    window.location.href = "contact-us.html";
-  });
+  calculateTotalScore(questions);
+});
 
-      
+document.getElementById("feedback-btn").addEventListener("click", () => {
+  window.location.href = "contact-us.html";
+});
+
   }
 
 
