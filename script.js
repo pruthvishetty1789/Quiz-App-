@@ -268,12 +268,12 @@ const gitQuestions = [
 // Python Questions
 const pythonQuestions = [
   { question: "Which keyword is used to define a function in Python?", options: ["function", "def", "func", "define"], answer: "def" },
-  { question: "How do you create a single-line comment in Python?", options: ["// This is a comment", "/* This is a comment */", "# This is a comment", "<!-- This is a comment -->"], answer: "# This is a comment" },
+  { question: "How do you create a single-line comment in Python?", options: ["// This is a comment", "/* This is a comment */", "# This is a comment", " \ \ This is a comment "], answer: "# This is a comment" },
   { question: "Which data type is used to store a sequence of items, is changeable, and allows duplicate values?", options: ["tuple", "dictionary", "set", "list"], answer: "list" },
   { question: "What is the correct way to get the length of a list named `my_list`?", options: ["len(my_list)", "my_list.length()", "size(my_list)", "length(my_list)"], answer: "len(my_list)" },
   { question: "In Python, how is a block of code (like in a loop or function) indicated?", options: ["Using curly braces {}", "Using parentheses ()", "Using indentation", "Using the `begin` and `end` keywords"], answer: "Using indentation" },
   { question: "Which operator is used for exponentiation (e.g., 5 to the power of 2)?", options: ["^", "*", "**", "pow"], answer: "**" },
-  { question: "What will `print(type('Hello'))` output?", options: ["<class 'string'>", "<class 'str'>", "<type 'string'>", "<type 'str'>"], answer: "<class 'str'>" },
+  { question: "What will `print(type('Hello'))` output?", options: ["&lt;class 'string'&gt;", "&lt;class 'str'&gt;", "&lt;type 'str'&gt;", "&lt;class 'string'&gt;"], answer: "&lt;class 'str'&gt;" },
   { question: "Which method is used to add an item to the end of a list?", options: [".add()", ".push()", ".insert()", ".append()"], answer: ".append()" },
   { question: "How do you access the value associated with the key 'name' in a dictionary `d`?", options: ["d.name", "d('name')", "d.get('name')", "d['name']"], answer: "d['name']" },
   { question: "Which statement is used to stop a loop?", options: ["stop", "exit", "break", "return"], answer: "break" }
@@ -311,31 +311,56 @@ const djangoQuestions = [
 // Function to render a single question
 const renderQuestion = (question, index, sectionId) => {
   const sectionContainer = document.getElementById(sectionId);
-
+  
   if (!sectionContainer) return;
 
   const questionElem = document.createElement("div");
   questionElem.classList.add("question-container");
-  questionElem.innerHTML = `
-    <p>${index + 1}. ${question.question}</p>
-    <ul class="option-container">
-      ${question.options
-        .map(
-          (option) => `
-        <li>
-          <label>
-            <input type="radio" name="question-${index}" value="${option}"> ${option}
-          </label>
-        </li>
-      `
-        )
-        .join("")}
-    </ul>
-    <button class="check-answer-btn" data-index="${index}">Check Answer</button>
-    <div class="result" id="result-${index}"></div>
-  `;
+
+  // Add question text
+  const questionText = document.createElement("p");
+  questionText.textContent = `${index + 1}. ${question.question}`;
+  questionElem.appendChild(questionText);
+
+  // Create options
+  const ul = document.createElement("ul");
+  ul.className = "option-container";
+
+  question.options.forEach((option) => {
+    const li = document.createElement("li");
+    const label = document.createElement("label");
+
+    const input = document.createElement("input");
+    input.type = "radio";
+    input.name = `question-${index}`;
+    input.value = option;
+
+    const textNode = document.createTextNode(" " + option);
+
+    label.appendChild(input);
+    label.appendChild(textNode);
+    li.appendChild(label);
+    ul.appendChild(li);
+  });
+
+  questionElem.appendChild(ul);
+
+  // Add Check Answer button
+  const checkBtn = document.createElement("button");
+  checkBtn.className = "check-answer-btn";
+  checkBtn.dataset.index = index;
+  checkBtn.textContent = "Check Answer";
+  questionElem.appendChild(checkBtn);
+
+  // Add result div
+  const resultDiv = document.createElement("div");
+  resultDiv.className = "result";
+  resultDiv.id = `result-${index}`;
+  questionElem.appendChild(resultDiv);
+
   sectionContainer.appendChild(questionElem);
 };
+
 
 // Function to render all questions
 const renderQuestions = (questions, sectionId) => {
@@ -347,10 +372,14 @@ const renderQuestions = (questions, sectionId) => {
   const sectionContainer = document.getElementById(sectionId);
   const scoreElem = document.createElement("div");
   scoreElem.classList.add("score-container");
-  scoreElem.innerHTML = `
-    <button id="calculate-score-btn">Calculate Total Score</button>
-    <div id="total-score" style="margin-top: 15px; font-weight: bold;"></div>
-  `;
+ scoreElem.innerHTML = `
+  <div style="display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap;">
+    <button id="calculate-score-btn" style="width: 180px; padding: 10px; font-size: 16px;">Calculate Total Score</button>
+    <button id="feedback-btn" style="width: 180px; padding: 10px; font-size: 16px;">Feedback / Report</button>
+  </div>
+  <div id="total-score" style="margin-top: 15px; font-weight: bold;"></div>
+`;
+
   sectionContainer.appendChild(scoreElem);
 };
 
@@ -446,9 +475,117 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
 
-    // Attach event listener to "Calculate Total Score" button
-    document
-      .getElementById("calculate-score-btn")
-      .addEventListener("click", () => calculateTotalScore(questions));
+    // ✅ Attach both event listeners right after injecting HTML
+  document.getElementById("calculate-score-btn")
+  .addEventListener("click", () => calculateTotalScore(questions));
+
+  document.getElementById("feedback-btn")
+  .addEventListener("click", () => {
+    window.location.href = "contact-us.html";
+  });
+
+      
   }
+
+// Function to toggle Feedback and Issue sections based on selected reason
+document.addEventListener("DOMContentLoaded", function () {
+    const reasonSelect = document.getElementById("reason");
+    const feedbackSection = document.getElementById("feedback-Section");
+    const issueSection = document.getElementById("issue-Section");
+    const contactForm = document.getElementById("contact-Form");
+    const contactResponseMessage = document.getElementById("responseMessage"); // For messages on the contact form page
+
+    // --- Function to show/hide sections and manage 'required' attributes ---
+    function toggleFormSections() {
+        if (!reasonSelect) return; // Exit if not on the contact form page
+
+        const selectedReason = reasonSelect.value;
+
+        // Hide both sections initially
+        feedbackSection.style.display = 'none';
+        issueSection.style.display = 'none';
+
+        // Set 'required' for elements within each section based on selection
+        setRequired(feedbackSection, false); // Unset all required first
+        setRequired(issueSection, false); // Unset all required first
+
+        if (selectedReason === 'feedback') {
+            feedbackSection.style.display = 'block';
+            setRequired(feedbackSection, true);
+        } else if (selectedReason === 'issue') {
+            issueSection.style.display = 'block';
+            setRequired(issueSection, true);
+        }
+    }
+
+    // Helper function to set/unset 'required' attribute for inputs within a section
+    function setRequired(sectionElement, isRequired) {
+        // Select all relevant form elements within the given section
+        const inputs = sectionElement.querySelectorAll('input:not([type="file"]), textarea, select');
+        inputs.forEach(input => {
+            // Set or remove the 'required' attribute
+            input.required = isRequired;
+        });
+    }
+
+    // --- Logic for the Contact Form Page (contact-us.html) ---
+    if (contactForm) { // Check if the contact form elements exist on the current page
+        // Initial call to set the correct section visibility on page load
+        toggleFormSections();
+
+        // Event listener for changes in the 'Reason for Contact' select box
+        reasonSelect.addEventListener("change", toggleFormSections);
+
+        // Handle form submission
+        contactForm.addEventListener("submit", function (e) {
+            e.preventDefault(); // Prevent default form submission
+
+            // Use the browser's built-in validation
+            if (!contactForm.checkValidity()) {
+                contactResponseMessage.textContent = 'Please fill out all required fields.';
+                contactResponseMessage.style.color = 'red';
+                return;
+            }
+
+            // At this point, the form is valid based on HTML5 'required' attributes
+
+            const selectedReason = reasonSelect.value;
+            let successMessage = "";
+
+            if (selectedReason === "feedback") {
+                successMessage = "Thank you for your feedback! We appreciate it.";
+            } else if (selectedReason === "issue") {
+                successMessage = "Your issue has been reported. Thank you!";
+            } else {
+                successMessage = "Form submitted successfully!"; // Fallback for no specific reason selected (though 'required' should prevent this)
+            }
+
+            // Simulate form data collection (for real scenario, you'd send this to a server)
+            const formData = new FormData(contactForm);
+            const data = {};
+            for (let [key, value] of formData.entries()) {
+                data[key] = value;
+            }
+            console.log("Form Data Submitted:", data);
+
+            // Store the success message in session storage
+            sessionStorage.setItem('formSubmissionSuccess', successMessage);
+
+            // Redirect to index.html
+            window.location.href = 'index.html';
+        });
+    }
+
+    // --- Logic for the Index Page (index.html) ---
+    const submissionMessageDiv = document.getElementById("submission-message");
+    if (submissionMessageDiv) { // Check if the submission message div exists on the current page
+        const message = sessionStorage.getItem('formSubmissionSuccess');
+        if (message) {
+            submissionMessageDiv.textContent = message;
+            submissionMessageDiv.style.color = "green";
+            submissionMessageDiv.style.fontWeight = "bold";
+            submissionMessageDiv.style.margin = "15px 0"; // Apply styling
+            sessionStorage.removeItem('formSubmissionSuccess'); // Clear the message after displaying
+        }
+    }
 });
