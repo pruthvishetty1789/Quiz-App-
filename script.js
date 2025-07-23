@@ -683,3 +683,16 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
+// Added "Restart Quiz" Feature
+function restartQuiz() {
+  if (confirm('Are you sure you want to restart the quiz? All progress will be lost.')) {
+    window.location.reload();
+  }
+}
+document.addEventListener("DOMContentLoaded", () => {
+  const restartBtn = document.getElementById('restartQuizBtn');
+  if (restartBtn) {
+    restartBtn.addEventListener('click', restartQuiz);
+  }
+});
+
