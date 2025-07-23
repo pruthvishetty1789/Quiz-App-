@@ -16,18 +16,6 @@ A modern, professional, and responsive quiz platform inspired by real online exa
 - Strict review mode after submission (no changes allowed)
 - Exit to Main Menu button after submission
 
-## Screenshots
-
-| Home Page | Quiz Page |
-|-----------|-----------|
-| ![Home Page](./screenshot/Screenshot%202025-07-23%20213820.png) | ![Quiz Page](./screenshot/Screenshot%202025-07-23%20213836.png) |
-
-| Submission Modal | Result/Review Page |
-|------------------|-------------------|
-| ![Submission Modal](./screenshot/Screenshot%202025-07-23%20213920.png) | ![Result/Review Page](./screenshot/Screenshot%202025-07-23%20213903.png) |
-
-> **Note:** Screenshots are stored in the `screenshot/` folder and referenced above for GitHub display.
-
 ## Getting Started
 
 1. **Clone or download this repository.**
@@ -46,7 +34,7 @@ A modern, professional, and responsive quiz platform inspired by real online exa
 - `script.js` — Main JavaScript logic
 - `styles.css` — Main stylesheet
 - `README.md` — Project documentation
-- `screenshot-*.png` — App screenshots (for README)
+- `screenshot/` — (Optional) Folder for screenshots
 
 ## Customization
 - Add or edit questions directly in the HTML files for each topic.
