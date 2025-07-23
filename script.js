@@ -246,31 +246,56 @@ const djangoQuestions = [
 // Function to render a single question
 const renderQuestion = (question, index, sectionId) => {
   const sectionContainer = document.getElementById(sectionId);
-
+  
   if (!sectionContainer) return;
 
   const questionElem = document.createElement("div");
   questionElem.classList.add("question-container");
-  questionElem.innerHTML = `
-    <p>${index + 1}. ${question.question}</p>
-    <ul class="option-container">
-      ${question.options
-        .map(
-          (option) => `
-        <li>
-          <label>
-            <input type="radio" name="question-${index}" value="${option}"> ${option}
-          </label>
-        </li>
-      `
-        )
-        .join("")}
-    </ul>
-    <button class="check-answer-btn" data-index="${index}">Check Answer</button>
-    <div class="result" id="result-${index}"></div>
-  `;
+
+  // Add question text
+  const questionText = document.createElement("p");
+  questionText.textContent = `${index + 1}. ${question.question}`;
+  questionElem.appendChild(questionText);
+
+  // Create options
+  const ul = document.createElement("ul");
+  ul.className = "option-container";
+
+  question.options.forEach((option) => {
+    const li = document.createElement("li");
+    const label = document.createElement("label");
+
+    const input = document.createElement("input");
+    input.type = "radio";
+    input.name = `question-${index}`;
+    input.value = option;
+
+    const textNode = document.createTextNode(" " + option);
+
+    label.appendChild(input);
+    label.appendChild(textNode);
+    li.appendChild(label);
+    ul.appendChild(li);
+  });
+
+  questionElem.appendChild(ul);
+
+  // Add Check Answer button
+  const checkBtn = document.createElement("button");
+  checkBtn.className = "check-answer-btn";
+  checkBtn.dataset.index = index;
+  checkBtn.textContent = "Check Answer";
+  questionElem.appendChild(checkBtn);
+
+  // Add result div
+  const resultDiv = document.createElement("div");
+  resultDiv.className = "result";
+  resultDiv.id = `result-${index}`;
+  questionElem.appendChild(resultDiv);
+
   sectionContainer.appendChild(questionElem);
 };
+
 
 // Function to render all questions
 const renderQuestions = (questions, sectionId) => {
@@ -497,3 +522,4 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 });
+
