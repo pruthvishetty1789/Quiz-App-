@@ -203,12 +203,12 @@ const gitQuestions = [
 // Python Questions
 const pythonQuestions = [
   { question: "Which keyword is used to define a function in Python?", options: ["function", "def", "func", "define"], answer: "def" },
-  { question: "How do you create a single-line comment in Python?", options: ["// This is a comment", "/* This is a comment */", "# This is a comment", "<!-- This is a comment -->"], answer: "# This is a comment" },
+  { question: "How do you create a single-line comment in Python?", options: ["// This is a comment", "/* This is a comment */", "# This is a comment", " \ \ This is a comment "], answer: "# This is a comment" },
   { question: "Which data type is used to store a sequence of items, is changeable, and allows duplicate values?", options: ["tuple", "dictionary", "set", "list"], answer: "list" },
   { question: "What is the correct way to get the length of a list named `my_list`?", options: ["len(my_list)", "my_list.length()", "size(my_list)", "length(my_list)"], answer: "len(my_list)" },
   { question: "In Python, how is a block of code (like in a loop or function) indicated?", options: ["Using curly braces {}", "Using parentheses ()", "Using indentation", "Using the `begin` and `end` keywords"], answer: "Using indentation" },
   { question: "Which operator is used for exponentiation (e.g., 5 to the power of 2)?", options: ["^", "*", "**", "pow"], answer: "**" },
-  { question: "What will `print(type('Hello'))` output?", options: ["<class 'string'>", "<class 'str'>", "<type 'string'>", "<type 'str'>"], answer: "<class 'str'>" },
+  { question: "What will `print(type('Hello'))` output?", options: ["&lt;class 'string'&gt;", "&lt;class 'str'&gt;", "&lt;type 'str'&gt;", "&lt;class 'string'&gt;"], answer: "&lt;class 'str'&gt;" },
   { question: "Which method is used to add an item to the end of a list?", options: [".add()", ".push()", ".insert()", ".append()"], answer: ".append()" },
   { question: "How do you access the value associated with the key 'name' in a dictionary `d`?", options: ["d.name", "d('name')", "d.get('name')", "d['name']"], answer: "d['name']" },
   { question: "Which statement is used to stop a loop?", options: ["stop", "exit", "break", "return"], answer: "break" }
@@ -246,31 +246,56 @@ const djangoQuestions = [
 // Function to render a single question
 const renderQuestion = (question, index, sectionId) => {
   const sectionContainer = document.getElementById(sectionId);
-
+  
   if (!sectionContainer) return;
 
   const questionElem = document.createElement("div");
   questionElem.classList.add("question-container");
-  questionElem.innerHTML = `
-    <p>${index + 1}. ${question.question}</p>
-    <ul class="option-container">
-      ${question.options
-        .map(
-          (option) => `
-        <li>
-          <label>
-            <input type="radio" name="question-${index}" value="${option}"> ${option}
-          </label>
-        </li>
-      `
-        )
-        .join("")}
-    </ul>
-    <button class="check-answer-btn" data-index="${index}">Check Answer</button>
-    <div class="result" id="result-${index}"></div>
-  `;
+
+  // Add question text
+  const questionText = document.createElement("p");
+  questionText.textContent = `${index + 1}. ${question.question}`;
+  questionElem.appendChild(questionText);
+
+  // Create options
+  const ul = document.createElement("ul");
+  ul.className = "option-container";
+
+  question.options.forEach((option) => {
+    const li = document.createElement("li");
+    const label = document.createElement("label");
+
+    const input = document.createElement("input");
+    input.type = "radio";
+    input.name = `question-${index}`;
+    input.value = option;
+
+    const textNode = document.createTextNode(" " + option);
+
+    label.appendChild(input);
+    label.appendChild(textNode);
+    li.appendChild(label);
+    ul.appendChild(li);
+  });
+
+  questionElem.appendChild(ul);
+
+  // Add Check Answer button
+  const checkBtn = document.createElement("button");
+  checkBtn.className = "check-answer-btn";
+  checkBtn.dataset.index = index;
+  checkBtn.textContent = "Check Answer";
+  questionElem.appendChild(checkBtn);
+
+  // Add result div
+  const resultDiv = document.createElement("div");
+  resultDiv.className = "result";
+  resultDiv.id = `result-${index}`;
+  questionElem.appendChild(resultDiv);
+
   sectionContainer.appendChild(questionElem);
 };
+
 
 // Function to render all questions
 const renderQuestions = (questions, sectionId) => {
@@ -510,3 +535,4 @@ document.addEventListener("DOMContentLoaded", () => {
     restartBtn.addEventListener('click', restartQuiz);
   }
 });
+
