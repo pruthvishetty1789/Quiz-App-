@@ -3,7 +3,7 @@
 A modern, professional, and responsive quiz platform inspired by real online exam systems.
 
 ## Features
-- Topic-wise quizzes (HTML, CSS, JS, Python, C++, DBMS, React, Next.js, Git, DSA, Django)
+- Topic-wise quizzes: **HTML, CSS, JavaScript, Python, C++, DBMS, React, Next.js, Git & GitHub, DSA, Django**
 - Clean, responsive UI with dark/light mode
 - Exam-style right-side question grid with color-coded status:
   - Not Visited
@@ -16,23 +16,17 @@ A modern, professional, and responsive quiz platform inspired by real online exa
 - Strict review mode after submission (no changes allowed)
 - Exit to Main Menu button after submission
 
-## Screenshots & Workflow
+## Screenshots
 
-### 1. Home Page (Topic Selection)
-![Home Page](./screenshot-home.png)
-*The homepage lets users select a quiz topic. The UI is clean, modern, and responsive, with a dark/light mode toggle in the top right.*
+| Home Page | Quiz Page |
+|-----------|-----------|
+| ![Home Page](./screenshot/Screenshot%202025-07-23%20213820.png) | ![Quiz Page](./screenshot/Screenshot%202025-07-23%20213836.png) |
 
-### 2. Quiz Page (Question & Navigation)
-![Quiz Page](./screenshot-quiz.png)
-*The quiz page displays the current question and options. The right panel shows a color-coded grid for all questions and a legend. Action buttons below the question allow saving, clearing, marking for review, and navigation. The "Exit to Main Menu" button appears after submission.*
+| Submission Modal | Result/Review Page |
+|------------------|-------------------|
+| ![Submission Modal](./screenshot/Screenshot%202025-07-23%20213920.png) | ![Result/Review Page](./screenshot/Screenshot%202025-07-23%20213903.png) |
 
-### 3. Submission Confirmation Modal
-![Submission Modal](./screenshot-modal.png)
-*When the user clicks Submit, a modal popup appears summarizing the number of answered, not answered, marked for review, and not visited questions. The user must confirm final submission before seeing results.*
-
-### 4. Result/Review Page
-![Result/Review Page](./screenshot-result.png)
-*After final submission, only the review area, question grid, and legend are visible. The user sees their score and a detailed review of all questions and answers. The quiz is fully locked, and only the "Exit to Main Menu" button is available.*
+> **Note:** Screenshots are stored in the `screenshot/` folder and referenced above for GitHub display.
 
 ## Getting Started
 
@@ -47,16 +41,28 @@ A modern, professional, and responsive quiz platform inspired by real online exa
 - After submitting, only your score and review are visible. Use **Exit to Main Menu** to return to the topic list.
 
 ## Project Structure
-- `src/` — All HTML, CSS, and JS files
-- `data/` — JSON files with quiz questions for each topic
-- `README.md` — This file
+- `index.html` — Main entry point
+- `*.html` — Quiz pages for each topic
+- `script.js` — Main JavaScript logic
+- `styles.css` — Main stylesheet
+- `README.md` — Project documentation
+- `screenshot-*.png` — App screenshots (for README)
 
 ## Customization
-- Add or edit questions in the `data/` JSON files.
-- Update styles in `src/styles.css` for branding or theme changes.
+- Add or edit questions directly in the HTML files for each topic.
+- Update styles in `styles.css` for branding or theme changes.
+
+## Contributing
+1. Fork this repository.
+2. Create a new branch for your feature or bugfix.
+3. Make your changes and commit them with clear messages.
+4. Push to your fork and open a Pull Request.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](./LICENSE) file for details.
 
 ---
 
-**Screenshot note:**
-- The images above are representative screenshots of the app in action. Save your screenshots as `screenshot-home.png`, `screenshot-quiz.png`, `screenshot-modal.png`, and `screenshot-result.png` in the project root to display them in the README.
+**If you like this project, please give it a star!**
 
