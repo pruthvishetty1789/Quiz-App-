@@ -52,7 +52,20 @@
   </footer>
   
 
-  <script src="script.js"></script> 
+<div id="chatButton" onclick="toggleChatbot()">💬</div>
+<div id="chatModal">
+    <span id="closeChatbot" onclick="toggleChatbot()" title="Close">×</span>
+    <iframe src="chatbot/chatbot.html"></iframe>
+</div>
+
+
+
+<script>
+  function toggleChatbot() {
+    const modal = document.getElementById("chatModal");
+    modal.style.display = modal.style.display === "block" ? "none" : "block";
+  }
+</script>
 </body>
 </html>
 
