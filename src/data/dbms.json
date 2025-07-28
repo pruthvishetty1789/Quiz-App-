@@ -1,54 +1,154 @@
 {
-    "questions": [
-        {
-            "question": "What is DBMS?",
-            "options": [
-                "Database Management System",
-                "Data Basic Memory System",
-                "Database Memory Storage",
-                "Data Backup Management System"
-            ],
-            "answer": "Database Management System"
-        },
-        {
-            "question": "Which of the following is not a type of database model?",
-            "options": [
-                "Network Model",
-                "Physical Model",
-                "Hierarchical Model",
-                "Relational Model"
-            ],
-            "answer": "Physical Model"
-        },
-        {
-            "question": "What is a primary key?",
-            "options": [
-                "A unique identifier for each record in a table",
-                "The first column in a table",
-                "The most important data in a table",
-                "A key that can have duplicate values"
-            ],
-            "answer": "A unique identifier for each record in a table"
-        },
-        {
-            "question": "Which SQL command is used to create a new table?",
-            "options": [
-                "CREATE TABLE",
-                "BUILD TABLE",
-                "GENERATE TABLE",
-                "MAKE TABLE"
-            ],
-            "answer": "CREATE TABLE"
-        },
-        {
-            "question": "What is normalization in DBMS?",
-            "options": [
-                "Process of organizing data to minimize redundancy",
-                "Process of creating backup of database",
-                "Process of adding more data to tables",
-                "Process of removing all data from database"
-            ],
-            "answer": "Process of organizing data to minimize redundancy"
-        }
-    ]
-} 
+  "questions": [
+    {
+      "question": "What is DBMS?",
+      "options": [
+        "Database Management System",
+        "Data Basic Memory System",
+        "Database Memory Storage",
+        "Data Backup Management System"
+      ],
+      "answer": "Database Management System"
+    },
+    {
+      "question": "Which of the following is not a type of database model?",
+      "options": [
+        "Network Model",
+        "Physical Model",
+        "Hierarchical Model",
+        "Relational Model"
+      ],
+      "answer": "Physical Model"
+    },
+    {
+      "question": "What is a primary key?",
+      "options": [
+        "A unique identifier for each record in a table",
+        "The first column in a table",
+        "The most important data in a table",
+        "A key that can have duplicate values"
+      ],
+      "answer": "A unique identifier for each record in a table"
+    },
+    {
+      "question": "Which SQL command is used to create a new table?",
+      "options": [
+        "CREATE TABLE",
+        "BUILD TABLE",
+        "GENERATE TABLE",
+        "MAKE TABLE"
+      ],
+      "answer": "CREATE TABLE"
+    },
+    {
+      "question": "What is normalization in DBMS?",
+      "options": [
+        "Process of organizing data to minimize redundancy",
+        "Process of creating backup of database",
+        "Process of adding more data to tables",
+        "Process of removing all data from database"
+      ],
+      "answer": "Process of organizing data to minimize redundancy"
+    },
+    {
+      "question": "Which key is used to uniquely identify a record and is also a foreign key in another table?",
+      "options": [
+        "Composite Key",
+        "Primary Key",
+        "Candidate Key",
+        "Foreign Key"
+      ],
+      "answer": "Foreign Key"
+    },
+    {
+      "question": "What does SQL stand for?",
+      "options": [
+        "Structured Query Language",
+        "Simple Query Language",
+        "Standard Query Language",
+        "Sequential Query Language"
+      ],
+      "answer": "Structured Query Language"
+    },
+    {
+      "question": "Which of the following is not a valid SQL statement?",
+      "options": [
+        "SELECT",
+        "INSERT",
+        "UPDATE",
+        "REMOVE"
+      ],
+      "answer": "REMOVE"
+    },
+    {
+      "question": "What is a foreign key?",
+      "options": [
+        "A key used to delete rows",
+        "A key that references the primary key of another table",
+        "A duplicate key in the same table",
+        "A key that has no relation to any table"
+      ],
+      "answer": "A key that references the primary key of another table"
+    },
+    {
+      "question": "Which level of data abstraction describes how the data is actually stored?",
+      "options": [
+        "View Level",
+        "Logical Level",
+        "Physical Level",
+        "External Level"
+      ],
+      "answer": "Physical Level"
+    },
+    {
+      "question": "What is a transaction in DBMS?",
+      "options": [
+        "A group of tasks treated as a single unit of work",
+        "A type of backup process",
+        "A schema update",
+        "A network request"
+      ],
+      "answer": "A group of tasks treated as a single unit of work"
+    },
+    {
+      "question": "Which of the following is ACID property in DBMS?",
+      "options": [
+        "Atomicity, Consistency, Isolation, Durability",
+        "Accuracy, Consistency, Isolation, Durability",
+        "Atomicity, Control, Independence, Durability",
+        "Authentication, Consistency, Isolation, Dependability"
+      ],
+      "answer": "Atomicity, Consistency, Isolation, Durability"
+    },
+    {
+      "question": "What is a view in SQL?",
+      "options": [
+        "A virtual table based on the result-set of a SQL query",
+        "A copy of a table",
+        "A temporary table stored in memory",
+        "A method to store backup of table"
+      ],
+      "answer": "A virtual table based on the result-set of a SQL query"
+    },
+    {
+      "question": "Which command is used to remove all records from a table in SQL but not the table itself?",
+      "options": [
+        "DROP",
+        "DELETE",
+        "REMOVE",
+        "TRUNCATE"
+      ],
+      "answer": "TRUNCATE"
+    },
+    {
+      "question": "Which normal form eliminates partial dependency?",
+      "options": [
+        "1NF",
+        "2NF",
+        "3NF",
+        "BCNF"
+      ],
+      "answer": "2NF"
+    }
+  ]
+}
